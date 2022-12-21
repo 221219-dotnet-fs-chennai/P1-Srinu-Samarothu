@@ -1,0 +1,23 @@
+# Commands used for Activity 1
+- cd C:/Rev*
+- git clone "https://github.com/221219-dotnet-fs-chennai/P1-Srinu-Samarothu.git"
+- cd P1-Srinu-Samarothu/
+- mkdir Assignment
+- cd Assignment
+- touch activity1.sh activity1.md
+- vi activity1.sh
+- i
+- read -p "Enter your first name : " Fname
+- read -p "Enter your last name : " Lname
+- read -p "Enter your DOB : " dob
+- echo -e "Name : $Fname $Lname \nDOB : $dob"
+- esc & shift+Z+Z
+- vi activity1.md
+- i 
+- ....
+- esc & shift+Z+Z
+- cd ..
+- git status
+- git commit -m "Activity for week 1 finished"
+- git push
+
