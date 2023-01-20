@@ -1,0 +1,12 @@
+C:\Revature\Projects\Project-1\p1\TraineeLib\bin\Debug\net6.0\TraineeLib.deps.json
+C:\Revature\Projects\Project-1\p1\TraineeLib\bin\Debug\net6.0\TraineeLib.dll
+C:\Revature\Projects\Project-1\p1\TraineeLib\bin\Debug\net6.0\TraineeLib.pdb
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.csproj.AssemblyReference.cache
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.AssemblyInfoInputs.cache
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.AssemblyInfo.cs
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.csproj.CoreCompileInputs.cache
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.dll
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\refint\TraineeLib.dll
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\TraineeLib.pdb
+C:\Revature\Projects\Project-1\p1\TraineeLib\obj\Debug\net6.0\ref\TraineeLib.dll
