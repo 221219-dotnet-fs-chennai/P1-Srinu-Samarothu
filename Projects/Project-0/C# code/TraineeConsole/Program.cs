@@ -16,6 +16,7 @@ namespace UI{
             Log.Logger = new LoggerConfiguration()
                              .WriteTo.File(path, rollingInterval : RollingInterval.Day, rollOnFileSizeLimit: true)
                              .CreateLogger();
+
             Log.Information("Console application started...");
             IRepo<TLogin, string> repo = new TLoginRepo();
             TLogin login = new TLogin();
