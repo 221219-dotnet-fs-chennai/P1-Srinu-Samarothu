@@ -65,3 +65,5 @@
 2023-01-23 23:21:43.639 +05:30 [INF] Entered into Login Menu
 2023-01-23 23:21:50.276 +05:30 [INF] Going into GET display menu
 2023-01-23 23:22:00.765 +05:30 [INF] Printing all Trainer details
+2023-01-23 23:24:49.132 +05:30 [INF] All trainer details are displayed
+2023-01-23 23:25:01.187 +05:30 [INF] Going into UPDATE display menu

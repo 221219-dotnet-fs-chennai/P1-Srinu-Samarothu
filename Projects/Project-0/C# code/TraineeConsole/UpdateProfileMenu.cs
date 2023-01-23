@@ -20,59 +20,59 @@ namespace TraineeLib
             UPDATE:
             Console.Clear();
             Console.WriteLine("------------ *** UPDATE YOUR PROFILE *** ------------");
-            Console.WriteLine("\n---- ** 1. FIELDS OF \"TRAINER\" DETAILS ** ----");
+            Console.WriteLine("\n---- ** 'TD' - FIELDS OF \"TRAINER\" DETAILS ** ----");
             Console.WriteLine("* First_name \n* Last_name\n* Gender \n* DOB");
-            Console.WriteLine("\n---- ** 2. FIELDS OF \"CONTACT\" DETAILS ** ----");
+            Console.WriteLine("\n---- ** 'CD' - FIELDS OF \"CONTACT\" DETAILS ** ----");
             Console.WriteLine("* Mobile_number \n* Zipcode\n* Address_lane \n* City \n* State");
-            Console.WriteLine("\n---- ** 3. FIELDS OF \"EDUCATION\" DETAILS ** ----");
+            Console.WriteLine("\n---- ** 'EDU' - FIELDS OF \"EDUCATION\" DETAILS ** ----");
             Console.WriteLine("* UG_college \n* UG_percentage \n* UG_passout_year\n* PG_college \n* PG_percentage \n* PG_passout_year");
-            Console.WriteLine("\n---- ** 4. FIELDS OF \"EXPERIENCE\" DETAILS ** ----");
+            Console.WriteLine("\n---- ** 'ED' - FIELDS OF \"EXPERIENCE\" DETAILS ** ----");
             Console.WriteLine("* Company \n* Designation\n* Overall_Experience");
-            Console.WriteLine("\n---- ** 5. FIELDS OF \"SKILL\" DETAILS ** ----");
+            Console.WriteLine("\n---- ** 'SD' - FIELDS OF \"SKILL\" DETAILS ** ----");
             Console.WriteLine("* Skill \n* Proficiency");
-            Console.WriteLine("\n---- ** 6. GO BACK ** ----");
-            Console.Write("\nEnter the option number you wish to update : ");
+            Console.WriteLine("\n---- ** '<-'  GO BACK ** ----");
+            Console.Write("\nEnter the option Keyword you wish to update : ");
             Update update = new Update(details);
-            int choice = Convert.ToInt32(Console.ReadLine());
+            string choice = Console.ReadLine();
             Console.Clear();
             //ch = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
-                case 1:
+                case "TD":
                     Console.WriteLine("\n---- ** FIELDS OF \"TRAINER\" DETAILS ** ----");
                     Console.WriteLine("* First_name\n* Last_name\n* Gender\n* DOB");
                     update.Update123("Trainee.Trainer_details");
                     Console.Write("Do you want to update more details ? Press enter ... ");
                     Console.ReadLine();
                     goto UPDATE;
-                case 2:
+                case "CD":
                     Console.WriteLine("\n---- ** FIELDS OF \"CONTACT\" DETAILS ** ----");
                     Console.WriteLine("* Mobile_number\n* Zipcode\n* Address_lane\n* City\n* State");
                     update.Update123("Trainee.Contact_details");
                     Console.Write("Do you want to update more details ? Press enter ... ");
                     Console.ReadLine();
                     goto UPDATE;
-                case 3:
+                case "EDU":
                     Console.WriteLine("\n---- ** FIELDS OF \"EDUCATION\" DETAILS ** ----");
                     Console.WriteLine("* UG_college\n* UG_percentage\n* UG_passout_year\n* PG_college\n* PG_percentage\n* PG_passout_year");
                     update.Update123("Trainee.Education");
                     Console.Write("Do you want to update more details ? Press enter ... ");
                     Console.ReadLine();
                     goto UPDATE;
-                case 4:
+                case "ED":
                     Console.WriteLine("\n---- ** FIELDS OF \"EXPERIENCE\" DETAILS ** ----");
                     Console.WriteLine("* Company\n* Designation\n* Overall_Experience");
                     update.Update4("Trainee.Experience");
                     Console.Write("Do you want to update more details ? Press enter ... ");
                     Console.ReadLine();
                     goto UPDATE;
-                case 5:
+                case "SD":
                     Console.WriteLine("\n---- ** FIELDS OF \"SKILL\" DETAILS ** ----\n* Skill\n* Proficiency");
                     update.Update5("Trainee.Skills");
                     Console.Write("Do you want to update more details ? Press enter ... ");
                     Console.ReadLine();
                     goto UPDATE;
-                case 6:
+                case "<-":
                     Console.WriteLine("Want to go back ? Then press \'Enter\'");
                     Console.ReadLine();
                     break;
@@ -84,13 +84,5 @@ namespace TraineeLib
             }
         }
 
-        //List<string> GetAllSkills(TDetails details)
-        //{
-        //    string query = $"select Skill from "
-        //    using SqlConnection connection = new SqlConnection();
-        //    connection.Open();
-        //    using SqlCommand command = new SqlCommand("")
-        //}
-       
     }
 }
