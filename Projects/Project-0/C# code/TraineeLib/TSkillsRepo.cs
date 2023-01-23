@@ -72,15 +72,10 @@ namespace TraineeLib
                 using SqlCommand sqlCommand = new SqlCommand(command, con);
                 sqlCommand.Parameters.AddWithValue("@id", details.Id);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
-
-                Console.WriteLine("Command executed");
-                
                 try
                 {
-                    Console.WriteLine("In try");
                     while (reader.Read())
                     {
-                        Console.WriteLine("skills");
                         skills.Add(new TSkills()
                         {
                             Skill = Convert.ToString(reader["Skill"]),
