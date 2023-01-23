@@ -72,21 +72,26 @@ namespace TraineeLib
                 using SqlCommand sqlCommand = new SqlCommand(command, con);
                 sqlCommand.Parameters.AddWithValue("@id", details.Id);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                Console.WriteLine("Command executed");
+                
                 try
                 {
+                    Console.WriteLine("In try");
                     while (reader.Read())
                     {
+                        Console.WriteLine("skills");
                         skills.Add(new TSkills()
                         {
                             Skill = Convert.ToString(reader["Skill"]),
                             Rate = Convert.ToInt32(reader["Proficiency"]),
                             Tid = Convert.ToInt32(reader["TID"])
-                        });
+                        }) ;
                     }
                 }
                 catch(Exception)
                 {
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("--- ** INFO : No Skill(s) Available ** ---");
                 }
             }

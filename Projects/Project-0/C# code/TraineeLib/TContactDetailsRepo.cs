@@ -118,7 +118,7 @@ namespace Trainer
                 }
                 catch(Exception)
                 {
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("--- ** INFO : No Contact Details are Available ** ---");
                 }
             }

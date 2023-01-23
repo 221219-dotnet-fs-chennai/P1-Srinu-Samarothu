@@ -38,25 +38,35 @@ namespace TraineeLib
                     Console.Clear();
                     Console.WriteLine("---- @ Trainer Details ----");
                     Console.WriteLine(details.ToString());
+
                     Console.WriteLine("\n---- @ Contact Details ----");
                     var contactList = contactRepo.fetchDetails(details);
                     Console.WriteLine(contactList.ToString());
+
                     Console.WriteLine("\n---- @ Education Details ----");
                     var educationList = educationRepo.fetchDetails(details);
-                    Console.WriteLine(educationList.ToString());
+                    if(educationList.UG_percentage != null) 
+                        Console.WriteLine(educationList.ToString());
+
                     Console.WriteLine("\n---- @ Skill(s) Details ----");
                     var skillList = skillRepo.fetchDetails(details);
-                    foreach(var skill in skillList)
-                    {
-                        Console.WriteLine(skill.ToString());
-                        Console.WriteLine(":----------------------------------------------------------------------:");
-                    }
+                        foreach (var skill in skillList)
+                        {
+                            //if(skill.Skill == null && skill.Rate == null)
+                            //{
+                            //    Console.WriteLine("--- ** INFO : No Skill(s) Available ** ---");
+                            //    break;
+                            //}
+                            Console.WriteLine(skill.ToString());
+                            Console.WriteLine(":-------------------------------:");
+                        }
+
                     Console.WriteLine("\n---- @ Experience(s) Details ----");
                     var experienceList = experienceRepo.fetchDetails(details);
                     foreach (var exp in experienceList)
                     {
                         Console.WriteLine(exp.ToString());
-                        Console.WriteLine(":----------------------------------------------------------------------:");
+                        Console.WriteLine(":------------------------------------:");
                     }
                     Console.Write("-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
@@ -86,19 +96,20 @@ namespace TraineeLib
                     Console.Clear();
                     Console.WriteLine("\n---- @ Education Details ----");
                     var eduList = educationRepo.fetchDetails(details);
-                    Console.WriteLine(eduList.ToString());
+                    if(eduList.UG_percentage != null)
+                        Console.WriteLine(eduList.ToString());
                     Console.Write("-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     goto GET;
                 case "SD":
                     Log.Information("Displaying Skills");
                     Console.Clear();
-                    Console.WriteLine("\n------------------------- @ Skill(s) Details -------------------------");
+                    Console.WriteLine("\n---- @ Skill(s) Details ----");
                     var sList = skillRepo.fetchDetails(details);
                     foreach (var skill in sList)
                     {
                         Console.WriteLine(skill.ToString());
-                        Console.WriteLine(":----------------------------------------------------------------------:");
+                        Console.WriteLine(":------------------------------------:");
                     }
                     Console.Write("-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
@@ -106,15 +117,17 @@ namespace TraineeLib
                 case "ED":
                     Log.Information("Displaying Experience details");
                     Console.Clear();
-                    Console.WriteLine("\n---------------------- @ Experience(s) Details -----------------------");
+                    Console.WriteLine("\n---- @ Experience(s) Details ----");
                     var expList = experienceRepo.fetchDetails(details);
                     foreach (var exp in expList)
                     {
                         Console.WriteLine(exp.ToString());
-                        Console.WriteLine(":----------------------------------------------------------------------:");
+                        Console.WriteLine(":-------------------------------------:");
                     }
-                    break;
-                case "BACK":
+                    Console.Write("-- INFO : Press enter to return to menu --");
+                    Console.ReadLine();
+                    goto GET;
+                case "<-":
                     break;
                 default:
                     Console.Clear();

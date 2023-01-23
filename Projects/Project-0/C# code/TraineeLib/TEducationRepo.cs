@@ -40,6 +40,11 @@ namespace Trainer
                 Console.Write("College : ");
                 education.UG_college = Console.ReadLine();
                 if (education.UG_college.Length >= 2) break;
+                else
+                {
+                    Console.WriteLine("Invalid input : Enter a valid UG College name");
+                    Console.WriteLine();
+                }
             }
             Validate valid = new Validate();
             while (true)
@@ -54,11 +59,11 @@ namespace Trainer
                         break;
                     }
                     else
-                        throw new Exception("Invalid input\n");
+                        throw new Exception();
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Invalid input\n");
+                    Console.WriteLine("\nInvalid input : Allowed percentage range is [40-100]\n");
                 }
             }
 
@@ -75,12 +80,12 @@ namespace Trainer
                     }
                     else
                     {
-                        throw new Exception("Invalid input\n");
+                        throw new Exception();
                     }
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Invalid input : Enter an integer\n\n");
+                    Console.WriteLine("\nInvalid input : Passout year should be in range [1999-2023]\n");
                 }
             }
             Console.WriteLine("\nEnter your Post Graduation details...");
@@ -91,20 +96,19 @@ namespace Trainer
                 Console.Write("College : ");
                 education.PG_college = Console.ReadLine();
                 if (education.PG_college.Length >= 2) break;
+                else
+                {
+                    Console.WriteLine("Invalid input : Enter a valid PG College name");
+                    Console.WriteLine();
+                }
             }
             while (true)
             {
                 Console.Write("Percentage : ");
                 try
                 {
-                    float x = (float)Convert.ToDouble(Console.ReadLine());
-                    if (valid.ValidatePercentage(x))
-                    {
-                        education.PG_percentage = x;
-                        break;
-                    }
-                    else
-                        throw new Exception("Invalid input\n");
+                    education.PG_percentage = (float)Convert.ToDouble(Console.ReadLine());
+                    break;
                 }
                 catch (Exception)
                 {
@@ -117,16 +121,8 @@ namespace Trainer
                 Console.Write("Passout year : ");
                 try
                 {
-                    int x = Convert.ToInt32(Console.ReadLine());
-                    if (valid.ValidatePassoutYear(x))
-                    {
-                        education.PG_passout_year = x;
-                        break;
-                    }
-                    else
-                    {
-                        throw new Exception("Invalid input\n");
-                    }
+                    education.PG_passout_year = Convert.ToInt32(Console.ReadLine());
+                    break;
                 }
                 catch (Exception)
                 {
@@ -167,7 +163,7 @@ namespace Trainer
                 }
                 catch(Exception)
                 {
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("--- ** INFO : No Education Details are Available ** ---");
                 }
             }

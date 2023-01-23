@@ -88,3 +88,332 @@
 2023-01-23 04:21:53.808 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
 2023-01-23 16:49:23.629 +05:30 [INF] Console application started...
 2023-01-23 16:49:23.773 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:01:12.035 +05:30 [INF] Console application started...
+2023-01-23 21:01:12.187 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:06:49.407 +05:30 [INF] Console application started...
+2023-01-23 21:06:49.547 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:09:21.035 +05:30 [INF] Validating Email...
+2023-01-23 21:09:22.259 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:09:22.303 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:09:22.304 +05:30 [INF] Email is validated
+2023-01-23 21:09:28.307 +05:30 [INF] Password is validated
+2023-01-23 21:09:28.307 +05:30 [INF] Successful login
+2023-01-23 21:09:28.307 +05:30 [INF] Succesful signup
+2023-01-23 21:09:32.502 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:09:32.555 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:09:32.555 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:09:42.837 +05:30 [INF] User adding some more details
+2023-01-23 21:09:42.995 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:12:38.633 +05:30 [INF] Console application started...
+2023-01-23 21:12:38.833 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:12:47.081 +05:30 [INF] Validating Email...
+2023-01-23 21:12:47.577 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:12:47.615 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:12:47.615 +05:30 [INF] Email is validated
+2023-01-23 21:12:51.835 +05:30 [INF] Password is validated
+2023-01-23 21:12:51.836 +05:30 [INF] Successful login
+2023-01-23 21:12:51.836 +05:30 [INF] Succesful signup
+2023-01-23 21:12:57.748 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:12:57.770 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:12:57.770 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:13:00.344 +05:30 [INF] User adding some more details
+2023-01-23 21:13:00.483 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:20:14.153 +05:30 [INF] Console application started...
+2023-01-23 21:20:14.406 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:20:56.322 +05:30 [INF] Validating Email...
+2023-01-23 21:20:56.712 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:20:56.735 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:20:56.735 +05:30 [INF] Email is validated
+2023-01-23 21:21:01.391 +05:30 [INF] Password is validated
+2023-01-23 21:21:01.391 +05:30 [INF] Successful login
+2023-01-23 21:21:01.391 +05:30 [INF] Succesful signup
+2023-01-23 21:21:03.993 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:21:04.011 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:21:04.011 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:21:07.871 +05:30 [INF] User adding some more details
+2023-01-23 21:21:07.993 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:21:16.857 +05:30 [INF] Going into GET display menu
+2023-01-23 21:21:20.491 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:21:46.596 +05:30 [INF] All trainer details are displayed
+2023-01-23 21:21:50.194 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:21:53.560 +05:30 [INF] All trainer details are displayed
+2023-01-23 21:21:56.273 +05:30 [INF] Displaying Trainer details
+2023-01-23 21:22:00.334 +05:30 [INF] Displaying Contact details
+2023-01-23 21:22:05.196 +05:30 [INF] Displaying Education details
+2023-01-23 21:22:13.392 +05:30 [INF] Displaying Experience details
+2023-01-23 21:22:26.817 +05:30 [INF] Going into GET display menu
+2023-01-23 21:23:37.063 +05:30 [INF] Console application started...
+2023-01-23 21:23:37.200 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:23:43.744 +05:30 [INF] Validating Email...
+2023-01-23 21:23:44.029 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:23:44.046 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:23:44.047 +05:30 [INF] Email is validated
+2023-01-23 21:23:47.545 +05:30 [INF] Password is validated
+2023-01-23 21:23:47.545 +05:30 [INF] Successful login
+2023-01-23 21:23:47.545 +05:30 [INF] Succesful signup
+2023-01-23 21:23:54.012 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:24:02.975 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:24:02.975 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:24:06.284 +05:30 [INF] Going into GET display menu
+2023-01-23 21:24:09.425 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:24:51.482 +05:30 [INF] Console application started...
+2023-01-23 21:24:51.757 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:25:00.219 +05:30 [INF] Validating Email...
+2023-01-23 21:25:00.488 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:25:00.503 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:25:00.503 +05:30 [INF] Email is validated
+2023-01-23 21:25:03.940 +05:30 [INF] Password is validated
+2023-01-23 21:25:03.940 +05:30 [INF] Successful login
+2023-01-23 21:25:03.940 +05:30 [INF] Succesful signup
+2023-01-23 21:25:06.298 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:25:06.314 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:25:06.315 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:25:08.716 +05:30 [INF] Going into GET display menu
+2023-01-23 21:25:13.538 +05:30 [INF] Displaying Education details
+2023-01-23 21:29:47.481 +05:30 [INF] Console application started...
+2023-01-23 21:29:47.656 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:30:01.803 +05:30 [INF] Validating Email...
+2023-01-23 21:30:02.222 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:30:02.242 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:30:02.242 +05:30 [INF] Email is validated
+2023-01-23 21:30:08.160 +05:30 [INF] Password is validated
+2023-01-23 21:30:08.160 +05:30 [INF] Successful login
+2023-01-23 21:30:08.160 +05:30 [INF] Succesful signup
+2023-01-23 21:30:11.089 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:30:11.106 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:30:11.106 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:30:37.596 +05:30 [INF] Going into GET display menu
+2023-01-23 21:30:40.596 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:33:53.838 +05:30 [INF] Console application started...
+2023-01-23 21:33:54.131 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:34:09.653 +05:30 [INF] Validating Email...
+2023-01-23 21:34:09.988 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:34:10.001 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:34:10.001 +05:30 [INF] Email is validated
+2023-01-23 21:34:15.025 +05:30 [INF] Password is validated
+2023-01-23 21:34:15.025 +05:30 [INF] Successful login
+2023-01-23 21:34:15.025 +05:30 [INF] Succesful signup
+2023-01-23 21:34:19.926 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:34:19.942 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:34:19.942 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:34:47.602 +05:30 [INF] Going into GET display menu
+2023-01-23 21:34:51.016 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:34:59.810 +05:30 [INF] All trainer details are displayed
+2023-01-23 21:42:57.721 +05:30 [INF] Console application started...
+2023-01-23 21:42:58.123 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:43:05.478 +05:30 [INF] Validating Email...
+2023-01-23 21:43:06.325 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:43:06.372 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:43:06.373 +05:30 [INF] Email is validated
+2023-01-23 21:43:10.527 +05:30 [INF] Password is validated
+2023-01-23 21:43:10.527 +05:30 [INF] Successful login
+2023-01-23 21:43:10.527 +05:30 [INF] Succesful signup
+2023-01-23 21:43:14.144 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:43:14.161 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:43:14.162 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:43:17.839 +05:30 [INF] Going into GET display menu
+2023-01-23 21:43:25.064 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:45:19.342 +05:30 [INF] Console application started...
+2023-01-23 21:45:19.533 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:45:46.209 +05:30 [INF] Validating Email...
+2023-01-23 21:45:46.798 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:45:46.834 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:45:46.834 +05:30 [INF] Email is validated
+2023-01-23 21:45:50.333 +05:30 [INF] Password is validated
+2023-01-23 21:45:50.333 +05:30 [INF] Successful login
+2023-01-23 21:45:50.333 +05:30 [INF] Succesful signup
+2023-01-23 21:45:53.401 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:45:53.415 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:45:53.415 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:45:55.983 +05:30 [INF] Going into GET display menu
+2023-01-23 21:45:59.568 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:46:49.680 +05:30 [INF] All trainer details are displayed
+2023-01-23 21:48:34.740 +05:30 [INF] Console application started...
+2023-01-23 21:48:34.902 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:48:47.841 +05:30 [INF] Validating Email...
+2023-01-23 21:48:48.336 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:48:48.378 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:48:48.378 +05:30 [INF] Email is validated
+2023-01-23 21:48:54.165 +05:30 [INF] Password is validated
+2023-01-23 21:48:54.166 +05:30 [INF] Successful login
+2023-01-23 21:48:54.166 +05:30 [INF] Succesful signup
+2023-01-23 21:49:01.065 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:49:01.081 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:49:01.081 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:49:12.847 +05:30 [INF] Going into GET display menu
+2023-01-23 21:49:17.455 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:50:13.162 +05:30 [INF] Console application started...
+2023-01-23 21:50:13.425 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:50:23.272 +05:30 [INF] Validating Email...
+2023-01-23 21:50:23.694 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:50:23.712 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:50:23.712 +05:30 [INF] Email is validated
+2023-01-23 21:50:27.964 +05:30 [INF] Password is validated
+2023-01-23 21:50:27.964 +05:30 [INF] Successful login
+2023-01-23 21:50:27.965 +05:30 [INF] Succesful signup
+2023-01-23 21:50:30.262 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:50:30.277 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:50:30.277 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:50:32.392 +05:30 [INF] Going into GET display menu
+2023-01-23 21:50:35.223 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:54:00.292 +05:30 [INF] Console application started...
+2023-01-23 21:54:00.440 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:54:10.803 +05:30 [INF] Validating Email...
+2023-01-23 21:54:11.219 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:54:11.233 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:54:11.233 +05:30 [INF] Email is validated
+2023-01-23 21:54:29.663 +05:30 [INF] Password is validated
+2023-01-23 21:54:29.663 +05:30 [INF] Successful login
+2023-01-23 21:54:29.663 +05:30 [INF] Succesful signup
+2023-01-23 21:54:33.461 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:54:38.261 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:54:38.262 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:54:41.273 +05:30 [INF] Going into GET display menu
+2023-01-23 21:54:43.764 +05:30 [INF] Printing all Trainer details
+2023-01-23 21:58:55.542 +05:30 [INF] Console application started...
+2023-01-23 21:58:55.857 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 21:59:04.688 +05:30 [INF] Validating Email...
+2023-01-23 21:59:05.248 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:59:05.269 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 21:59:05.270 +05:30 [INF] Email is validated
+2023-01-23 21:59:10.754 +05:30 [INF] Password is validated
+2023-01-23 21:59:10.754 +05:30 [INF] Successful login
+2023-01-23 21:59:10.754 +05:30 [INF] Succesful signup
+2023-01-23 21:59:13.314 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 21:59:13.329 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 21:59:13.329 +05:30 [INF] Entered into Login Menu
+2023-01-23 21:59:16.416 +05:30 [INF] Going into GET display menu
+2023-01-23 21:59:18.436 +05:30 [INF] Printing all Trainer details
+2023-01-23 22:00:48.429 +05:30 [INF] Console application started...
+2023-01-23 22:00:48.607 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:00:57.920 +05:30 [INF] Validating Email...
+2023-01-23 22:00:58.246 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:00:58.260 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:00:58.260 +05:30 [INF] Email is validated
+2023-01-23 22:01:02.909 +05:30 [INF] Password is validated
+2023-01-23 22:01:02.910 +05:30 [INF] Successful login
+2023-01-23 22:01:02.910 +05:30 [INF] Succesful signup
+2023-01-23 22:01:05.690 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 22:01:05.704 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:01:05.704 +05:30 [INF] Entered into Login Menu
+2023-01-23 22:01:09.250 +05:30 [INF] Going into GET display menu
+2023-01-23 22:01:11.491 +05:30 [INF] Printing all Trainer details
+2023-01-23 22:02:51.380 +05:30 [INF] Console application started...
+2023-01-23 22:02:51.736 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:03:00.764 +05:30 [INF] Validating Email...
+2023-01-23 22:03:01.095 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:03:01.108 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:03:01.108 +05:30 [INF] Email is validated
+2023-01-23 22:03:06.671 +05:30 [INF] Password is validated
+2023-01-23 22:03:06.672 +05:30 [INF] Successful login
+2023-01-23 22:03:06.672 +05:30 [INF] Succesful signup
+2023-01-23 22:03:13.184 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 22:03:13.198 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:03:13.198 +05:30 [INF] Entered into Login Menu
+2023-01-23 22:03:17.327 +05:30 [INF] Going into GET display menu
+2023-01-23 22:03:21.334 +05:30 [INF] Printing all Trainer details
+2023-01-23 22:03:24.363 +05:30 [INF] All trainer details are displayed
+2023-01-23 22:03:29.325 +05:30 [INF] Displaying Education details
+2023-01-23 22:03:43.481 +05:30 [INF] Displaying Skills
+2023-01-23 22:03:55.418 +05:30 [INF] Displaying Experience details
+2023-01-23 22:04:09.655 +05:30 [INF] Going into GET display menu
+2023-01-23 22:04:16.512 +05:30 [INF] Displaying Experience details
+2023-01-23 22:05:53.482 +05:30 [INF] Console application started...
+2023-01-23 22:05:53.693 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:06:05.971 +05:30 [INF] Validating Email...
+2023-01-23 22:06:06.709 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:06:06.760 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:06:06.761 +05:30 [INF] Email is validated
+2023-01-23 22:06:37.290 +05:30 [INF] Password is validated
+2023-01-23 22:06:37.290 +05:30 [INF] Successful login
+2023-01-23 22:06:37.290 +05:30 [INF] Succesful signup
+2023-01-23 22:06:42.225 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 22:06:42.249 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:06:42.250 +05:30 [INF] Entered into Login Menu
+2023-01-23 22:06:57.340 +05:30 [INF] Going into GET display menu
+2023-01-23 22:07:00.072 +05:30 [INF] Displaying Experience details
+2023-01-23 22:07:09.246 +05:30 [INF] Displaying Skills
+2023-01-23 22:07:13.357 +05:30 [INF] Displaying Education details
+2023-01-23 22:07:51.865 +05:30 [INF] Displaying Contact details
+2023-01-23 22:07:56.931 +05:30 [INF] Displaying Trainer details
+2023-01-23 22:11:17.422 +05:30 [INF] Printing all Trainer details
+2023-01-23 22:11:43.342 +05:30 [INF] All trainer details are displayed
+2023-01-23 22:11:59.895 +05:30 [INF] Displaying Experience details
+2023-01-23 22:12:06.132 +05:30 [INF] Printing all Trainer details
+2023-01-23 22:13:29.540 +05:30 [INF] All trainer details are displayed
+2023-01-23 22:23:12.076 +05:30 [INF] Console application started...
+2023-01-23 22:23:12.411 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:23:23.691 +05:30 [INF] Validating Email...
+2023-01-23 22:23:24.175 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:23:24.189 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:23:24.189 +05:30 [INF] Email is validated
+2023-01-23 22:24:35.223 +05:30 [INF] Password is validated
+2023-01-23 22:24:35.223 +05:30 [INF] Successful login
+2023-01-23 22:24:35.223 +05:30 [INF] Succesful signup
+2023-01-23 22:24:37.772 +05:30 [INF] User chose YES, To carry on with GET, DELETE and UPDATE operations
+2023-01-23 22:24:37.787 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:24:37.787 +05:30 [INF] Entered into Login Menu
+2023-01-23 22:24:40.298 +05:30 [INF] Going into GET display menu
+2023-01-23 22:24:41.786 +05:30 [INF] Printing all Trainer details
+2023-01-23 22:26:51.862 +05:30 [INF] All trainer details are displayed
+2023-01-23 22:50:05.592 +05:30 [INF] Console application started...
+2023-01-23 22:50:05.939 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:50:15.204 +05:30 [INF] Validating Email...
+2023-01-23 22:50:15.591 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:50:15.602 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:50:15.603 +05:30 [INF] New user arraived
+2023-01-23 22:50:15.604 +05:30 [INF] Asking for new password 
+2023-01-23 22:54:08.170 +05:30 [INF] Console application started...
+2023-01-23 22:54:08.349 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:54:17.161 +05:30 [INF] Validating Email...
+2023-01-23 22:54:17.661 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:54:17.681 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:54:17.681 +05:30 [INF] New user arraived
+2023-01-23 22:54:33.114 +05:30 [INF] Console application started...
+2023-01-23 22:54:33.326 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:54:44.934 +05:30 [INF] Validating Email...
+2023-01-23 22:54:45.244 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:54:45.269 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:54:45.269 +05:30 [INF] New user arraived
+2023-01-23 22:54:49.030 +05:30 [INF] Asking for new password 
+2023-01-23 22:55:06.422 +05:30 [INF] Console application started...
+2023-01-23 22:55:06.689 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 22:55:12.751 +05:30 [INF] Validating Email...
+2023-01-23 22:55:13.238 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:55:13.257 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 22:55:13.257 +05:30 [INF] New user arraived
+2023-01-23 22:55:15.875 +05:30 [INF] Asking for new password 
+2023-01-23 22:57:48.527 +05:30 [INF] New password is added
+2023-01-23 22:57:48.548 +05:30 [INF] New Trainer Added abcd@gmail.com
+2023-01-23 22:57:48.548 +05:30 [INF] Succesful signup
+2023-01-23 22:58:03.417 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:58:09.990 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 22:58:10.107 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:00:59.280 +05:30 [INF] Console application started...
+2023-01-23 23:00:59.643 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 23:01:07.684 +05:30 [INF] Validating Email...
+2023-01-23 23:01:08.050 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:01:08.076 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 23:01:08.076 +05:30 [INF] Email is validated
+2023-01-23 23:01:13.052 +05:30 [INF] Password is validated
+2023-01-23 23:01:13.052 +05:30 [INF] Successful login
+2023-01-23 23:01:13.052 +05:30 [INF] Succesful signup
+2023-01-23 23:01:21.145 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:01:24.402 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:01:24.402 +05:30 [INF] Entered into Login Menu
+2023-01-23 23:01:36.106 +05:30 [INF] User adding some more details
+2023-01-23 23:01:36.207 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:04:19.125 +05:30 [INF] Console application started...
+2023-01-23 23:04:19.313 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 23:04:28.839 +05:30 [INF] Validating Email...
+2023-01-23 23:04:29.397 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:04:29.414 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 23:04:29.415 +05:30 [INF] Email is validated
+2023-01-23 23:04:36.827 +05:30 [INF] Password is validated
+2023-01-23 23:04:36.827 +05:30 [INF] Successful login
+2023-01-23 23:04:36.827 +05:30 [INF] Succesful signup
+2023-01-23 23:04:42.558 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:04:46.509 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:04:46.509 +05:30 [INF] Entered into Login Menu
+2023-01-23 23:08:59.962 +05:30 [INF] Console application started...
+2023-01-23 23:09:00.137 +05:30 [INF] Entered 'SignUp' page

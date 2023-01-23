@@ -21,7 +21,7 @@ namespace TraineeLib
             Console.Write("Enter OK to delete your profile permanently or else NO to skip the deletion : ");
             string choice = Console.ReadLine();
             TLogin login = TLoginRepo.FetchEmail(mail);
-            if (choice == "OK" || choice == "ok") 
+            if (choice == "OK" || choice == "ok" || choice == "Ok" || choice == "oK") 
             {
                 Console.WriteLine("--- < Please confirm your password in 3 attempts before deactivating your profile > ---");
                 for (int i = 3; i > 0; )

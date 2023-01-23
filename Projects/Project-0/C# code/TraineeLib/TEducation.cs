@@ -9,12 +9,12 @@ namespace Trainer
     public class TEducation
     { 
         public string? UG_college { get; set; }
-        public float UG_percentage { get; set;  }
-        public int UG_passout_year { get; set; }
+        public float? UG_percentage { get; set;  }
+        public int? UG_passout_year { get; set; }
         public string? PG_college { get; set; }
         public float PG_percentage { get; set; }
-        public int PG_passout_year { get; set; }
-        public int Tid { get; set; }
+        public int? PG_passout_year { get; set; }
+        public int? Tid { get; set; }
         public TEducation() { }
         public override string ToString()
         {

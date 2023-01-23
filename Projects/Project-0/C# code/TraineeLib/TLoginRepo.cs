@@ -90,7 +90,7 @@ namespace Trainer
                 }
                 else
                 {
-                    Console.WriteLine("*** ALERT :- Invalid 'Password', check wheather you entered a 10-digit mobile number :] ***");
+                    Console.WriteLine("*** ALERT :- Invalid 'Password', password must follow above rules :] ***");
                 }
             }
             while (true)

@@ -22,7 +22,7 @@ namespace TraineeUI
             TLogin login = new ();
             Console.Clear();
             Log.Information("Entered 'SignUp' page");
-            Console.WriteLine("---------- *** Welcome :) *** ----------");
+            Console.WriteLine("\t\t---------- *** Welcome :) *** ----------");
             string mail;
             while (true)
             {
@@ -51,10 +51,30 @@ namespace TraineeUI
             {
                 Log.Information("New user arraived");
                 Console.WriteLine("--- *** INFO : IT looks like you are new here, Get youself registered *** ---");
-                var elogin = repo.NewTrainee(mail);
-                repo.AddTrainee(elogin);
-                Log.Information($"New Trainer Added {mail}");
-                status = "Signin";
+                TLogin elogin = new TLogin();
+                while (true)
+                {
+                    YN:
+                    Console.Write("\nWould you like to join us ('Y' or 'N') ? ");
+                    char c = Convert.ToChar(Console.ReadLine());
+                    switch (c) 
+                    {
+                        case 'Y':
+                            elogin = repo.NewTrainee(mail);
+                            repo.AddTrainee(elogin);
+                            Log.Information($"New Trainer Added {mail}");
+                            status = "Signin";
+                            return elogin;
+                        case 'N':
+                            Environment.Exit(0);
+                            goto BREAK;
+                        default:
+                            Console.WriteLine("\nInvalid input\n");
+                            goto YN;
+                   }
+                BREAK:
+                    break;
+                }
                 return elogin;
             }
         }
@@ -70,16 +90,22 @@ namespace TraineeUI
             LOGIN:
                 Console.Clear();
                 Console.WriteLine("\n-- ** Please enter your choice using the Keywords on LHS ** --");
-                Console.WriteLine("\n'GET' : Get details");
+                Console.WriteLine("\n'ADD' : Add details");
+                Console.WriteLine("'GET' : Get details");
                 Console.WriteLine("'UPDATE' : Update details");
                 Console.WriteLine("'DELETE' : Delete details");
                 Console.WriteLine("'EXIT' : Exit");
                 Console.Write("\nChoose and Enter a Keyword : ");
                 keyWord = Console.ReadLine();
                 GetAllDetails gad = new GetAllDetails(login);
+                SetAllDetails set = new SetAllDetails();
                 TDetailsRepo repo = new TDetailsRepo();
                 switch (keyWord)
                 {
+                    case "ADD":
+                        Log.Information("User adding some more details");
+                        set.Display(login);
+                        goto LOGIN;
                     case "GET":
                         Log.Information("Going into GET display menu");
                         gad.DisplayGET();
@@ -94,8 +120,7 @@ namespace TraineeUI
                         delDetails.Display(details);
                         goto LOGIN;
                     case "EXIT":
-                        Console.WriteLine("Closing your profile :)\nPress any key to Exit...");
-                        Console.ReadLine();
+                        Console.WriteLine("Closing your profile :)\n\n\t\t... *** Comeback Again *** ...");
                         break;
                     default:
                         Console.WriteLine("ERR : Invalid Input \nClosing your profile...");

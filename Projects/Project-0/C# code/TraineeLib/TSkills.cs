@@ -9,7 +9,7 @@ namespace Trainer
     public class TSkills
     {
         public string? Skill { get; set; }
-        public int Rate { get; set; }
+        public int? Rate { get; set; }
         public int Tid { get; set; }
         public TSkills() { }
         public override string ToString()
