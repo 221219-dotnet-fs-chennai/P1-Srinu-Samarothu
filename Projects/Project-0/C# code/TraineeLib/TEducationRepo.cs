@@ -19,9 +19,9 @@ namespace Trainer
             sqlCommand.Parameters.AddWithValue("@uc", education.UG_college);
             sqlCommand.Parameters.AddWithValue("@up", education.UG_percentage);
             sqlCommand.Parameters.AddWithValue("@upy", education.UG_passout_year);
-            sqlCommand.Parameters.AddWithValue("@pc", education.UG_college);
-            sqlCommand.Parameters.AddWithValue("@pp", education.UG_percentage);
-            sqlCommand.Parameters.AddWithValue("@ppy", education.UG_passout_year);
+            sqlCommand.Parameters.AddWithValue("@pc", education.PG_college);
+            sqlCommand.Parameters.AddWithValue("@pp", education.PG_percentage);
+            sqlCommand.Parameters.AddWithValue("@ppy", education.PG_passout_year);
             sqlCommand.Parameters.AddWithValue("@id", education.Tid);
             int rows = sqlCommand.ExecuteNonQuery();
             Console.WriteLine("------ ** Education details added ** ------");
@@ -127,7 +127,7 @@ namespace Trainer
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Invalid input : Enter an integer\n\n");
+                    Console.WriteLine("Invalid input : Enter an integer\n");
                 }
             }
             try
@@ -156,10 +156,10 @@ namespace Trainer
                 {
                     reader.Read();
                     education.UG_college = Convert.ToString(reader["UG_college"]);
-                    education.UG_percentage = Convert.ToInt32(reader["UG_percentage"]);
-                    education.UG_passout_year = Convert.ToInt32(reader["PG_passout_year"]);
+                    education.UG_percentage = (float)(reader["UG_percentage"]);
+                    education.UG_passout_year = Convert.ToInt32(reader["UG_passout_year"]);
                     education.PG_college = Convert.ToString(reader["PG_college"]);
-                    education.PG_percentage = Convert.ToInt32(reader["PG_percentage"]);
+                    education.PG_percentage = (float)(reader["PG_percentage"]);
                     education.PG_passout_year = Convert.ToInt32(reader["PG_passout_year"]);
                 }
                 catch(Exception)
