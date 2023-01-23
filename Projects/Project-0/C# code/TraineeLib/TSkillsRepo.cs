@@ -34,6 +34,7 @@ namespace TraineeLib
 
         public void GetDetails(TDetails details)
         {
+            Console.Clear();
             Console.WriteLine(" ** You can enter atmost 3 technical skills and the corresponding proficiency levels ** ");
             int c = 1;
             Dictionary<string, int> skills = new Dictionary<string, int>();
@@ -52,8 +53,8 @@ namespace TraineeLib
                 if (c >= 2 && c <= 3)
                 {
                     Console.Write($"\nDo you want to add skill-{c} ? then enter Y otherwise enter N to skip : ");
-                    char ch = Convert.ToChar(Console.ReadLine());
-                    if( ch == 'Y' || ch == 'y'){ continue; }
+                    string ch = Console.ReadLine();
+                    if( ch == "Y" || ch == "Y"){ continue; }
                     else { break;  }
                 }
             }

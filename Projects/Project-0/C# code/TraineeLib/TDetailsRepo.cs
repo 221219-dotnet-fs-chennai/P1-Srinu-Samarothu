@@ -38,6 +38,7 @@ namespace Trainer
             Validate valid = new Validate();
             var ids = GetAllIds();
             int c = 1;
+            Console.Clear();
             Console.WriteLine("\n** NOTE : The IDs that are alredy in use were listed below **");
             foreach(int id in ids)
             {

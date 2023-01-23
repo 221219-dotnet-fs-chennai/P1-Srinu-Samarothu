@@ -33,6 +33,7 @@ namespace Trainer
             //TExperience experience = new TExperience();
             int c = 1, experience;
             string? company, des;
+            Console.Clear();
             Console.WriteLine("** You can enter atmost 3 experience-details below... ");
             while (c < 4)
             {

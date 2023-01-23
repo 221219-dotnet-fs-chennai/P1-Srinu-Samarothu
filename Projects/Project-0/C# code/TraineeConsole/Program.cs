@@ -25,6 +25,7 @@ namespace UI{
             Menu menu = new Menu();
             login = Menu.SignUp();
             Log.Information("Succesful signup");
+            Console.Clear();
             Console.WriteLine("\n\n---- ?! Have you entered your details before !? ----");
             Console.WriteLine("'YES' : Entered the details");
             Console.WriteLine("'NO' : Want to add now");

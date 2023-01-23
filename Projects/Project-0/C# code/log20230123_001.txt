@@ -165,3 +165,22 @@
 2023-01-23 23:49:34.322 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
 2023-01-23 23:49:37.552 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
 2023-01-23 23:49:42.994 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:54:43.739 +05:30 [INF] Console application started...
+2023-01-23 23:54:43.886 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 23:55:04.149 +05:30 [INF] Validating Email...
+2023-01-23 23:55:04.458 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:55:04.476 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 23:55:04.476 +05:30 [INF] New user arraived
+2023-01-23 23:55:32.916 +05:30 [INF] Console application started...
+2023-01-23 23:55:33.138 +05:30 [INF] Entered 'SignUp' page
+2023-01-23 23:56:05.097 +05:30 [INF] Validating Email...
+2023-01-23 23:56:05.459 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:56:05.473 +05:30 [INF] Checking wheather input mail exists or not
+2023-01-23 23:56:05.473 +05:30 [INF] New user arraived
+2023-01-23 23:56:08.217 +05:30 [INF] Asking for new password 
+2023-01-23 23:57:02.787 +05:30 [INF] New password is added
+2023-01-23 23:57:02.799 +05:30 [INF] New Trainer Added random@gmail.com
+2023-01-23 23:57:02.799 +05:30 [INF] Succesful signup
+2023-01-23 23:57:37.354 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:59:26.455 +05:30 [INF] Got TLogin object from FetchEmail(string mail)
+2023-01-23 23:59:29.519 +05:30 [INF] Got TLogin object from FetchEmail(string mail)

@@ -44,6 +44,7 @@ namespace Trainer
         {
             TContactDetails contactDetails = new TContactDetails();
             RegexValidation validate = new RegexValidation();
+            Console.Clear();
             Console.WriteLine("\n----- => Enter Your Contact Details <= -----");
             while (true)
             {

@@ -33,6 +33,7 @@ namespace Trainer
         public TEducation GetDetails(TDetails details)
         {
             TEducation education = new TEducation();
+            Console.Clear();
             Console.WriteLine("\n----- => Enter Education Details <= -----");
             Console.WriteLine("\nEnter your Under Graduation details...");
             while (true)

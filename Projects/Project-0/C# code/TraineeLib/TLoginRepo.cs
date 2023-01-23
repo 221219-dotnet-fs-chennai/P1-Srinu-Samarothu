@@ -71,7 +71,7 @@ namespace Trainer
         {
             TLogin login = new TLogin();
             RegexValidation validate = new RegexValidation();
-            Console.Write($"\nYour Email id : {mail}");
+            
             login.Email = mail;
             Console.WriteLine("\n# Rules to create password :");
             Console.WriteLine("1. Must '8 characters' long");
@@ -79,6 +79,7 @@ namespace Trainer
             Console.WriteLine("3. Must contain atleast a digit");
             string password;
             Log.Information("Asking for new password ");
+            Console.Write($"\nYour Email id : {mail}");
             while (true)
             {
                 Console.Write("\nCreate a new password : ");
