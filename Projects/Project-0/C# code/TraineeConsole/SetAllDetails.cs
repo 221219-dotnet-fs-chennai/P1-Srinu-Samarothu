@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TraineeUI;
 using Trainer;
 
 namespace TraineeLib
@@ -65,7 +66,8 @@ namespace TraineeLib
                         c++;
                         login = TLoginRepo.FetchEmail(login.Email);
                     }
-                    if(c == 0) { 
+                    if(c == 0) {
+                        Console.Clear();
                         Console.WriteLine("\n*** It seems you entered all your details earlier ***\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
@@ -84,6 +86,7 @@ namespace TraineeLib
                     }
                     else
                     {
+                        Console.Clear();
                         Console.Write("\n--- INFO : You've already entered Trainer Details ---\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
@@ -99,6 +102,7 @@ namespace TraineeLib
                     }
                     else
                     {
+                        Console.Clear();
                         Console.Write("\n--- INFO : You've already entered Contact Details ---\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
@@ -114,6 +118,7 @@ namespace TraineeLib
                     }
                     else
                     {
+                        Console.Clear();
                         Console.Write("\n--- INFO : You've already entered Education Details ---\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
@@ -129,6 +134,7 @@ namespace TraineeLib
                     }
                     else
                     {
+                        Console.Clear();
                         Console.Write("\n--- INFO : You've already entered Experience Details ---\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
@@ -144,16 +150,22 @@ namespace TraineeLib
                     }
                     else
                     {
+                        Console.Clear();
                         Console.Write("\n--- INFO : You've already entered Skill(S) ---\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
                     goto ADD;
                 case "EXIT":
+                    Console.Clear();
+                    Console.WriteLine("Closing your profile :)\n\n\t\t... *** Comeback Again *** ...");
                     Environment.Exit(0);
                     goto ADD;
                 case "LOGIN":
+                    Menu menu = new Menu();
+                    menu.Display(TLoginRepo.FetchEmail(login.Email));
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("** Invalid input **");
                     Console.Write("\nHit enter to view the \"Add details\" menu...");
                     Console.ReadKey();

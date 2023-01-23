@@ -120,6 +120,7 @@ namespace TraineeUI
                         delDetails.Display(details);
                         goto LOGIN;
                     case "EXIT":
+                        Console.Clear();
                         Console.WriteLine("Closing your profile :)\n\n\t\t... *** Comeback Again *** ...");
                         break;
                     default:
