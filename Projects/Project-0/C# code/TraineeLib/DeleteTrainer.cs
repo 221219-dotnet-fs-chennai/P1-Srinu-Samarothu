@@ -43,10 +43,10 @@ namespace TraineeLib
                     }
                     else
                     {
-                        if (i - 1 != 0)
+                        if (i - 1 >= 0)
                         {
                             Console.WriteLine($"---Invalid input : {--i} attempt(s) left ---");
-                            Console.Write("Enter the password again : ");
+                            //Console.Write("Enter the password again : ");
                         }
                         else
                         {

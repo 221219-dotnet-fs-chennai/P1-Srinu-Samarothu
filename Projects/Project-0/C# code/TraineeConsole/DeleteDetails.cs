@@ -30,6 +30,7 @@ namespace TraineeLib
                     trainer.DeleteTrainer(details.email);
                     Console.Write("Press any key to return to Deletion menu..");
                     Console.ReadLine();
+                    Environment.Exit(0);
                     goto DELETE;
                 case "TD":
                     trainer.DeleteTDetails(details);

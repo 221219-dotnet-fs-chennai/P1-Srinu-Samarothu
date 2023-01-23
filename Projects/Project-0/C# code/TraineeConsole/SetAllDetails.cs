@@ -23,6 +23,7 @@ namespace TraineeLib
             Console.WriteLine($"'ED' : Add Experience details {login.EDstatus}");
             Console.WriteLine($"'SD' : Add Skill details {login.SDstatus}");
             Console.WriteLine("'LOGIN' : Login into your account");
+            Console.WriteLine("'EXIT' : Exit ");
             Console.Write("\nChoose and Enter a Keyword : ");
             TDetailsRepo detailsRepo = new TDetailsRepo();
             TContactDetailsRepo contactRepo = new TContactDetailsRepo();
@@ -146,6 +147,9 @@ namespace TraineeLib
                         Console.Write("\n--- INFO : You've already entered Skill(S) ---\n\nPress enter to continue...");
                         Console.ReadKey();
                     }
+                    goto ADD;
+                case "EXIT":
+                    Environment.Exit(0);
                     goto ADD;
                 case "LOGIN":
                     break;
