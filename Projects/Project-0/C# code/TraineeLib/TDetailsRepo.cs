@@ -91,7 +91,7 @@ namespace Trainer
                 }
                 else
                 {
-                    Console.WriteLine("*** ALERT :- Invalid 'DOB', check wheather you entered a year between [1700-2900] :] ***");
+                    Console.WriteLine("*** ALERT :- Invalid 'DOB', Enter a valid DOB :] ***");
                 }
             }
             try
