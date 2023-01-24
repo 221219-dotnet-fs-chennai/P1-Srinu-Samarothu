@@ -146,7 +146,7 @@ namespace Trainer
                 catch (Exception) 
                 {
                     //Console.Clear();
-                    Console.WriteLine("--- ** INFO : No Trainer Details are Available ** ---");
+                    Console.WriteLine("\n--- ** INFO : No Trainer Details are Available ** ---");
                 }
             }
             return details;

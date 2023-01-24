@@ -156,10 +156,10 @@ namespace Trainer
                 {
                     reader.Read();
                     education.UG_college = Convert.ToString(reader["UG_college"]);
-                    education.UG_percentage = (float)(reader["UG_percentage"]);
+                    education.UG_percentage = (float)Convert.ToDouble(reader["UG_percentage"]);
                     education.UG_passout_year = Convert.ToInt32(reader["UG_passout_year"]);
                     education.PG_college = Convert.ToString(reader["PG_college"]);
-                    education.PG_percentage = (float)(reader["PG_percentage"]);
+                    education.PG_percentage = (float)Convert.ToDouble(reader["PG_percentage"]);
                     education.PG_passout_year = Convert.ToInt32(reader["PG_passout_year"]);
                 }
                 catch(Exception)

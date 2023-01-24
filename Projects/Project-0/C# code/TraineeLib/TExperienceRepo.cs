@@ -86,7 +86,7 @@ namespace Trainer
                 catch (Exception)
                 {
                     //Console.Clear();
-                    Console.WriteLine("--- ** INFO : No Experience Details are Available ** ---");
+                    Console.WriteLine("\n--- ** INFO : No Experience Details are Available ** ---");
                 }
             }
             return experiences;

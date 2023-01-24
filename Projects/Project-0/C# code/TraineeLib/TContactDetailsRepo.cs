@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -116,6 +117,8 @@ namespace Trainer
                     contactDetails.Zipcode = Convert.ToString(reader["Zipcode"]);
                     contactDetails.Tid = Convert.ToInt32(reader["TID"]);
                     contactDetails.Email = Convert.ToString(reader["Mail_id"]);
+                    if (contactDetails.Num > 99)
+                        Console.WriteLine(contactDetails.ToString());
                 }
                 catch(Exception)
                 {

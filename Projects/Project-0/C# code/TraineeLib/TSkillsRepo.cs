@@ -88,7 +88,7 @@ namespace TraineeLib
                 catch(Exception)
                 {
                     //Console.Clear();
-                    Console.WriteLine("--- ** INFO : No Skill(s) Available ** ---");
+                    Console.WriteLine("\n--- ** INFO : No Skill(s) Available ** ---");
                 }
             }
             return skills;

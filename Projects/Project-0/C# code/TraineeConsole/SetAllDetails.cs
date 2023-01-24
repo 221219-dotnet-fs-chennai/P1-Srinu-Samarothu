@@ -16,6 +16,8 @@ namespace TraineeLib
         ADD:
             Console.Clear();
             TLogin login = TLoginRepo.FetchEmail(login1.Email);
+            Console.WriteLine("\n** Note : If you signed up right now, then you are not able to LOGIN directly **");
+            Console.WriteLine("**        After adding all your details, EXIT once and then LOGIN into your profile **");
             Console.WriteLine("\n-- ** Please enter your choice using the Keywords on LHS ** --");
             Console.WriteLine($"'ALL' : Add all details at once");
             Console.WriteLine($"'TD' : Add Trainer details {login.TDstatus}");

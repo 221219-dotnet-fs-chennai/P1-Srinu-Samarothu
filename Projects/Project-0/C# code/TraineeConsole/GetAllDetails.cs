@@ -41,11 +41,11 @@ namespace TraineeLib
 
                     Console.WriteLine("\n---- @ Contact Details ----");
                     var contactList = contactRepo.fetchDetails(details);
-                    Console.WriteLine(contactList.ToString());
+                    //Console.WriteLine(contactList.ToString());
 
                     Console.WriteLine("\n---- @ Education Details ----");
                     var educationList = educationRepo.fetchDetails(details);
-                    if(educationList.UG_percentage != null) 
+                    if(educationList.UG_percentage > 39) 
                         Console.WriteLine(educationList.ToString());
 
                     Console.WriteLine("\n---- @ Skill(s) Details ----");
@@ -68,7 +68,7 @@ namespace TraineeLib
                         Console.WriteLine(exp.ToString());
                         Console.WriteLine(":------------------------------------:");
                     }
-                    Console.Write("-- INFO : Press enter to return to menu --");
+                    Console.Write("\n-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     Log.Information("All trainer details are displayed");
                     goto GET;
@@ -79,7 +79,7 @@ namespace TraineeLib
                     Console.WriteLine("---- @ Trainer Details ----");
                     TDetails details1 = detailsRepo.fetchDetails(login);
                     Console.WriteLine(details1.ToString());
-                    Console.Write("-- INFO : Press enter to return to menu --");
+                    Console.Write("\n-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     goto GET;
                 case "CD":
@@ -87,18 +87,24 @@ namespace TraineeLib
                     Console.Clear();
                     Console.WriteLine("\n---- @ Contact Details ----");
                     var cList = contactRepo.fetchDetails(details);
-                    Console.WriteLine(cList.ToString());
-                    Console.Write("-- INFO : Press enter to return to menu --");
+                    
+
+
+                    Console.Write("\n-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     goto GET;
                 case "EDU":
                     Log.Information("Displaying Education details");
                     Console.Clear();
                     Console.WriteLine("\n---- @ Education Details ----");
+
+                    //Console.WriteLine(details.ToString());
+
+
                     var eduList = educationRepo.fetchDetails(details);
-                    if(eduList.UG_percentage != null)
+                    if(eduList.UG_percentage > 20)
                         Console.WriteLine(eduList.ToString());
-                    Console.Write("-- INFO : Press enter to return to menu --");
+                    Console.Write("\n-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     goto GET;
                 case "SD":
@@ -111,7 +117,7 @@ namespace TraineeLib
                         Console.WriteLine(skill.ToString());
                         Console.WriteLine(":------------------------------------:");
                     }
-                    Console.Write("-- INFO : Press enter to return to menu --");
+                    Console.Write("\n-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     goto GET;
                 case "ED":
@@ -124,7 +130,7 @@ namespace TraineeLib
                         Console.WriteLine(exp.ToString());
                         Console.WriteLine(":-------------------------------------:");
                     }
-                    Console.Write("-- INFO : Press enter to return to menu --");
+                    Console.Write("\n-- INFO : Press enter to return to menu --");
                     Console.ReadLine();
                     goto GET;
                 case "<-":
