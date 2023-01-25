@@ -122,6 +122,7 @@ namespace TraineeUI
                     case "EXIT":
                         Console.Clear();
                         Console.WriteLine("Closing your profile :)\n\n\t\t... *** Comeback Again *** ...");
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.WriteLine("ERR : Invalid Input \nClosing your profile...");

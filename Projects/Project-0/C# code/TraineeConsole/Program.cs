@@ -55,8 +55,6 @@ namespace UI{
                         break;
                 }
             }
-            //details = detailsRepo.fetchDetails(login);
-            //menu.Display(login);
         }
     }
 }
