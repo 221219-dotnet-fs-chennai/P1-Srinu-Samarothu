@@ -123,7 +123,7 @@ namespace Trainer
                 catch(Exception)
                 {
                     //Console.Clear();
-                    Console.WriteLine("--- ** INFO : No Contact Details are Available ** ---");
+                    Console.WriteLine("\n--- ** INFO : No Contact Details are Available ** ---");
                 }
             }
             return contactDetails;

@@ -165,7 +165,7 @@ namespace Trainer
                 catch(Exception)
                 {
                     //Console.Clear();
-                    Console.WriteLine("--- ** INFO : No Education Details are Available ** ---");
+                    Console.WriteLine("\n--- ** INFO : No Education Details are Available ** ---");
                 }
             }
             return education;
