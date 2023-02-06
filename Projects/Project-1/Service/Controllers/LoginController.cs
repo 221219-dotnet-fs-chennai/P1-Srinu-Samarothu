@@ -17,7 +17,7 @@ namespace Service.Controllers
             logic = _logic;
         }
 
-        [HttpGet("GetAllLogins")]
+        [HttpGet("GetAll")]
         public ActionResult GetLogins()
         {
             try
@@ -60,7 +60,7 @@ namespace Service.Controllers
         }
 
 
-        [HttpDelete("DeleteLogin/{Email}")]
+        [HttpDelete("Delete/{Email}")]
         public ActionResult Delete(string? Email)
         {
             try
@@ -88,7 +88,7 @@ namespace Service.Controllers
 
         }
 
-        [HttpPut("modify/{Email}/{Password}")]
+        [HttpPut("Modify/{Email}/{Password}")]
         public ActionResult Update([FromRoute] string? Email, [FromRoute] string? Password, [FromBody] TraineeLogin login)
         {
             try

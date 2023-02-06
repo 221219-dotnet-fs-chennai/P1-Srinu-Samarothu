@@ -15,11 +15,13 @@ namespace Business_Logic
         ITrainerRepo<DF.TraineeLogin> loginRepo;
         ITrainerRepo<DF.TraineeTrainerDetail> trainerRepo;
         ITrainerRepo<DF.TraineeContactDetail> contactRepo;
-        public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, LogicActions _action)
+        ITrainerRepo<DF.Education> educationRepo;
+        public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, ITrainerRepo<DF.Education> _education, LogicActions _action)
         {
             loginRepo = _login;
             trainerRepo = _trainer;
             contactRepo = _contact;
+            educationRepo = _education;
             action = _action;
         }
 
@@ -53,13 +55,34 @@ namespace Business_Logic
 
                 if (entitylogin != null)
                 {
-                    entitylogin.Password = login.Password;
-                    entitylogin.Tdstatus = login.Tdstatus;
-                    entitylogin.Cdstatus = login.Cdstatus;
-                    entitylogin.Edustatus = login.Edustatus;
-                    entitylogin.Edstatus = login.Edstatus;
-                    entitylogin.Sdstatus = login.Sdstatus;
+                    if (login.Password != "string" && entitylogin.Password != login.Password) {
+                        entitylogin.Password = login.Password;
+                    }
+                    if (login.Tdstatus != 0 && entitylogin.Tdstatus != login.Tdstatus)
+                    {
+                        entitylogin.Tdstatus = login.Tdstatus;
+                    }
+                    if (login.Cdstatus != 0 && entitylogin.Cdstatus != login.Cdstatus)
+                    {
+                        entitylogin.Cdstatus = login.Cdstatus;
+                    }
+                    if (login.Edustatus != 0 && entitylogin.Edustatus != login.Edustatus)
+                    {
+                        entitylogin.Edustatus = login.Edustatus;
+                    }
+                    if (login.Edstatus != 0 && entitylogin.Edstatus != login.Edstatus)
+                    {
+                        entitylogin.Edstatus = login.Edstatus;
+                    }
+                    if (login.Sdstatus != 0 && entitylogin.Sdstatus != login.Sdstatus)
+                    {
+                        entitylogin.Sdstatus = login.Sdstatus;
+                    }
                     loginRepo.UpdateDetails(entitylogin);
+                }
+                else
+                {
+                    Console.WriteLine("Credentials does not exist (or) incorrect");
                 }
             }
             catch(Exception ex)
@@ -118,10 +141,22 @@ namespace Business_Logic
 
                 if (entityTrainer != null)
                 {
-                    entityTrainer.FirstName = trainer.FirstName;
-                    entityTrainer.LastName = trainer.LastName;
-                    entityTrainer.Dob = trainer.Dob;
-                    entityTrainer.Gender = trainer.Gender;
+                    if (trainer.FirstName != "string" && entityTrainer.FirstName != trainer.FirstName)
+                    {
+                        entityTrainer.FirstName = trainer.FirstName;
+                    }
+                    if (trainer.LastName != "string" && entityTrainer.LastName != trainer.LastName)
+                    {
+                        entityTrainer.LastName = trainer.LastName;
+                    }
+                    if (trainer.Dob != "string" && entityTrainer.Dob != trainer.Dob)
+                    {
+                        entityTrainer.Dob = trainer.Dob;
+                    }
+                    if (trainer.Gender != "string" && entityTrainer.Gender != trainer.Gender)
+                    {
+                        entityTrainer.Gender = trainer.Gender;
+                    }
                     trainerRepo.UpdateDetails(entityTrainer);
                 }
             }
@@ -159,11 +194,26 @@ namespace Business_Logic
 
                 if (entityTrainer != null)
                 {
-                    entityTrainer.MobileNumber = contact.MobileNumber;
-                    entityTrainer.AddressLane = contact.AddressLane;
-                    entityTrainer.City = contact.City;
-                    entityTrainer.State = contact.State;
-                    entityTrainer.Zipcode = contact.Zipcode;
+                    if(contact.MobileNumber != 0 && entityTrainer.MobileNumber != contact.MobileNumber)
+                    {
+                        entityTrainer.MobileNumber = contact.MobileNumber;
+                    }
+                    if (contact.AddressLane != "string" && entityTrainer.AddressLane != contact.AddressLane)
+                    {
+                        entityTrainer.AddressLane = contact.AddressLane;
+                    }
+                    if (contact.City != "string" && entityTrainer.City != contact.City)
+                    {
+                        entityTrainer.City = contact.City;
+                    }
+                    if (contact.State != "string" && entityTrainer.State != contact.State)
+                    {
+                        entityTrainer.State = contact.State;
+                    }
+                    if (contact.Zipcode != "string" && entityTrainer.Zipcode != contact.Zipcode)
+                    {
+                        entityTrainer.Zipcode = contact.Zipcode;
+                    }
                     contactRepo.UpdateDetails(entityTrainer);
                 }
             }
@@ -178,6 +228,75 @@ namespace Business_Logic
             int id = action.GetTrainerId(mail);
             var search = contactRepo.GetDetails().Where(l => l.Tid == id).First();
             return Mapper.MapGetModelContact(contactRepo.DeleteDetails(search));
+        }
+
+
+        // --------------------- Education Details -----------------
+
+        public Education AddTrainerEducation(string? mail, Education educationDetails)
+        {
+            educationDetails.Tid = action.GetTrainerId(mail);
+            var entityEducation = Mapper.MapGetEntityEducation(educationDetails);
+            educationRepo.AddDetails(entityEducation);
+            return educationDetails;
+        }
+
+        public Education GetTrainerEducation(string? Email)
+        {
+            int id = action.GetTrainerId(Email);
+            DF.Education trainerEducation = educationRepo.GetDetails().Where(c => c.Tid == id).First();
+            return Mapper.MapGetModelEducation(trainerEducation);
+        }
+
+
+        public void UpdateTrainerEducation(string? mail, Education education)
+        {
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                DF.Education entityEducation = educationRepo.GetDetails().Where(t => t.Tid == id).First();
+
+                if (entityEducation != null)
+                {
+                    if (education.UgCollege != "string" && entityEducation.UgCollege != education.UgCollege)
+                    {
+                        entityEducation.UgCollege = education.UgCollege;
+                    }
+                    if (education.UgPercentage != 0 && entityEducation.UgPercentage != education.UgPercentage)
+                    {
+                        entityEducation.UgPercentage = education.UgPercentage;
+                    }
+                    if (education.UgPassoutYear != 0 && entityEducation.UgPassoutYear != education.UgPassoutYear)
+                    {
+                        entityEducation.UgPassoutYear = education.UgPassoutYear;
+                    }
+                    if (education.PgCollege != "string" && entityEducation.PgCollege != education.PgCollege)
+                    {
+                        entityEducation.PgCollege = education.PgCollege;
+                    }
+                    if (education.PgPercentage != 0 && entityEducation.PgPercentage != education.PgPercentage)
+                    {
+                        entityEducation.PgPercentage = education.PgPercentage;
+                    }
+                    if (education.PgPassoutYear != 0 && entityEducation.PgPassoutYear != education.PgPassoutYear)
+                    {
+                        entityEducation.PgPassoutYear = education.PgPassoutYear;
+                    }
+                    educationRepo.UpdateDetails(entityEducation);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        public Education DeleteTrainerEducation(string? mail)
+        {
+            int id = action.GetTrainerId(mail);
+            var search = educationRepo.GetDetails().Where(l => l.Tid == id).First();
+            return Mapper.MapGetModelEducation(educationRepo.DeleteDetails(search));
         }
 
     }

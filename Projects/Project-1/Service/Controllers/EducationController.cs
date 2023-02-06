@@ -8,25 +8,24 @@ namespace Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TrainerContactController : ControllerBase
+    public class EducationController : ControllerBase
     {
         ILogic logic;
-        public TrainerContactController(ILogic _logic)
+        public EducationController(ILogic _logic)
         {
             logic = _logic;
         }
-
 
         [HttpGet("Get/{Email}")]
         public ActionResult GetTrainer([FromRoute] string? Email)
         {
             try
             {
-                var contact = logic.GetTrainerContact(Email);
-                if (contact != null)
-                    return Ok(contact);
+                var education = logic.GetTrainerEducation(Email);
+                if (education != null)
+                    return Ok(education);
                 else
-                    return BadRequest("No Trainer logins found");
+                    return BadRequest("No Trainer education found");
             }
             catch (SqlException ex)
             {
@@ -40,14 +39,13 @@ namespace Service.Controllers
         }
 
 
-
         [HttpPost("Add/{Email}")]
-        public ActionResult Add([FromRoute] string? Email, [FromBody] TraineeContactDetail contact)
+        public ActionResult Add([FromRoute] string? Email, [FromBody] Education education)
         {
             try
             {
-                var newContact = logic.AddTrainerContact(Email, contact);
-                return CreatedAtAction("Add", newContact);
+                var newEducation = logic.AddTrainerEducation(Email, education);
+                return CreatedAtAction("Add", newEducation);
             }
             catch (SqlException ex)
             {
@@ -67,9 +65,9 @@ namespace Service.Controllers
             {
                 if (!string.IsNullOrEmpty(Email))
                 {
-                    var trainer = logic.DeleteTrainerContact(Email);
-                    if (trainer != null)
-                        return Ok(trainer);
+                    var education = logic.DeleteTrainerEducation(Email);
+                    if (education != null)
+                        return Ok(education);
                     else
                         return NotFound();
                 }
@@ -90,14 +88,14 @@ namespace Service.Controllers
 
 
         [HttpPut("Modify/{Email}")]
-        public ActionResult Update([FromRoute] string? Email, [FromBody] TraineeContactDetail contact)
+        public ActionResult Update([FromRoute] string? Email, [FromBody] Education education)
         {
             try
             {
                 if (!string.IsNullOrEmpty(Email))
                 {
-                    logic.UpdateTrainerContact(Email, contact);
-                    return Ok(contact);
+                    logic.UpdateTrainerEducation(Email, education);
+                    return Ok(education);
                 }
                 else
                     return BadRequest($"something wrong with {Email} input, please try again!");
@@ -111,8 +109,6 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
 
     }
 }

@@ -5,7 +5,7 @@ namespace Models;
 
 public partial class Education
 {
-    public string? UgCollege { get; set; }
+    public string UgCollege { get; set; }
 
     public int UgPercentage { get; set; }
 

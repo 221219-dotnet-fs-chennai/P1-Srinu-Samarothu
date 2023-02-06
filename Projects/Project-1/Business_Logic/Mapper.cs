@@ -114,5 +114,36 @@ namespace Business_Logic
                 MailId = contactDetail.MailId
             };
         }
+
+        // ---------------------- Education Mapper ------------------------
+
+        public static DF.Education MapGetEntityEducation(Education educationDetail)
+        {
+            return new DF.Education()
+            {
+                UgCollege = educationDetail.UgCollege,
+                UgPercentage = educationDetail.UgPercentage,
+                UgPassoutYear = educationDetail.UgPassoutYear,
+                PgCollege = educationDetail.PgCollege,
+                PgPercentage = educationDetail.PgPercentage,
+                PgPassoutYear = educationDetail.PgPassoutYear,
+                Tid = educationDetail.Tid,
+            };
+        }
+
+
+        public static Education MapGetModelEducation(DF.Education educationDetail)
+        {
+            return new Education()
+            {
+                UgCollege = educationDetail.UgCollege,
+                UgPercentage = educationDetail.UgPercentage,
+                UgPassoutYear = educationDetail.UgPassoutYear,
+                PgCollege = educationDetail.PgCollege,
+                PgPercentage = educationDetail.PgPercentage,
+                PgPassoutYear = educationDetail.PgPassoutYear,
+                Tid = educationDetail.Tid,
+            };
+        }
     }
 }

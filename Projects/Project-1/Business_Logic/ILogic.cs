@@ -39,5 +39,15 @@ namespace Business_Logic
         public void UpdateTrainerContact(string? mail, TraineeContactDetail contact);
 
         public TraineeContactDetail DeleteTrainerContact(string? mail);
+
+        //------------- Trainer Contact Logic -----------------
+
+        public Education AddTrainerEducation(string? mail, Education educationDetails);
+
+        public Education GetTrainerEducation(string? Email);
+
+        public void UpdateTrainerEducation(string? mail, Education education);
+
+        public Education DeleteTrainerEducation(string? mail);
     }
 }

@@ -35,9 +35,15 @@ namespace Business_Logic
 
         public int GetTrainerId(string? mail)
         {
-            return (from trainer in context.TraineeTrainerDetails
-                    where trainer.Mail == mail
-                   select trainer.Tid).First();
+            try { 
+                return (from trainer in context.TraineeTrainerDetails
+                        where trainer.Mail == mail
+                        select trainer.Tid).First();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }

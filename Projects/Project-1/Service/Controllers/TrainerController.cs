@@ -39,7 +39,7 @@ namespace Service.Controllers
         }
 
 
-        [HttpPost("AddTrainer/{Email}")]
+        [HttpPost("Add/{Email}")]
         public ActionResult Add([FromRoute] string? Email, [FromBody] TraineeTrainerDetail trainer)
         {
             try
@@ -58,7 +58,7 @@ namespace Service.Controllers
         }
 
 
-        [HttpDelete("DeleteTrainer/{Email}")]
+        [HttpDelete("Delete/{Email}")]
         public ActionResult Delete(string? Email)
         {
             try
@@ -86,7 +86,7 @@ namespace Service.Controllers
 
         }
 
-        [HttpPut("modify/{Email}")]
+        [HttpPut("Modify/{Email}")]
         public ActionResult Update([FromRoute] string? Email, [FromBody] TraineeTrainerDetail trainer)
         {
             try
