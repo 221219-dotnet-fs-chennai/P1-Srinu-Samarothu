@@ -23,6 +23,7 @@ builder.Services.AddScoped<LogicActions, LogicActions>();
 builder.Services.AddScoped<ITrainerRepo<DF.TraineeLogin>, LoginRepo>();
 builder.Services.AddScoped<ITrainerRepo<DF.TraineeTrainerDetail>, TrainerRepo>();
 builder.Services.AddScoped<ITrainerRepo<DF.TraineeContactDetail>, ContactRepo>();
+builder.Services.AddScoped<ITrainerRepo<DF.Education>, EducationRepo>();
 
 
 
