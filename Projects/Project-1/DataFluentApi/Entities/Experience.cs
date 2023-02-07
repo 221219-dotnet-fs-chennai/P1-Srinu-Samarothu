@@ -5,9 +5,9 @@ namespace DataFluentApi.Entities;
 
 public partial class Experience
 {
-    public string Company { get; set; } = null!;
+    public string? Company { get; set; } = null!;
 
-    public string Designation { get; set; } = null!;
+    public string? Designation { get; set; } = null!;
 
     public int OverallExperience { get; set; }
 

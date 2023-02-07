@@ -49,5 +49,17 @@ namespace Business_Logic
         public void UpdateTrainerEducation(string? mail, Education education);
 
         public Education DeleteTrainerEducation(string? mail);
+
+        // --------------------- Trainer Experience Logic -----------------
+
+        public Experience AddTrainerExperience(string? mail, Experience experienceDetails);
+
+        public IEnumerable<Experience> GetTrainerExperience(string? Email);
+
+        public void UpdateTrainerExperience(string? mail, string? company, Experience experience);
+
+        public Experience DeleteTrainerExperience(string? mail, string? company);
+
+        public IEnumerable<Experience> DeleteAllTrainerExperience(string? mail);
     }
 }

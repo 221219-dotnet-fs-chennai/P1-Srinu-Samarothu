@@ -16,6 +16,7 @@ namespace Business_Logic
         ITrainerRepo<DF.TraineeTrainerDetail> trainerRepo;
         ITrainerRepo<DF.TraineeContactDetail> contactRepo;
         ITrainerRepo<DF.Education> educationRepo;
+        ITrainerRepo<DF.Experience> experienceRepo;
         public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, ITrainerRepo<DF.Education> _education, LogicActions _action)
         {
             loginRepo = _login;
@@ -299,5 +300,72 @@ namespace Business_Logic
             return Mapper.MapGetModelEducation(educationRepo.DeleteDetails(search));
         }
 
+
+        // --------------------- Experience Details -----------------
+
+        public Experience AddTrainerExperience(string? mail, Experience experienceDetails)
+        {
+            experienceDetails.Tid = action.GetTrainerId(mail);
+            var entityExperience = Mapper.MapGetEntityExperience(experienceDetails);
+            experienceRepo.AddDetails(entityExperience);
+            return experienceDetails;
+        }
+
+        public IEnumerable<Experience> GetTrainerExperience(string? Email)
+        {
+            int id = action.GetTrainerId(Email);
+            List<DF.Experience> trainerExperience = experienceRepo.GetDetails().Where(c => c.Tid == id).ToList();
+            return Mapper.MapAllModelExperiences(trainerExperience);
+        }
+
+        public void UpdateTrainerExperience(string? mail, string? company, Experience experience)
+        {
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                DF.Experience entityExperience = experienceRepo.GetDetails().Where(t => t.Tid == id && t.Company == company).First();
+
+                if (entityExperience != null)
+                {
+                    if (experience.Company != "string" && entityExperience.Company != experience.Company)
+                    {
+                        entityExperience.Company = experience.Company;
+                    }
+                    if (experience.Designation != "string" && entityExperience.Designation != experience.Designation)
+                    {
+                        entityExperience.Designation = experience.Designation;
+                    }
+                    if (experience.OverallExperience != 0 && entityExperience.OverallExperience != experience.OverallExperience)
+                    {
+                        entityExperience.OverallExperience = experience.OverallExperience;
+                    }
+                    experienceRepo.UpdateDetails(entityExperience);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        public Experience DeleteTrainerExperience(string? mail, string? company)
+        {
+            int id = action.GetTrainerId(mail);
+            var search = experienceRepo.GetDetails().Where(l => l.Tid == id && l.Company == company).First();
+            return Mapper.MapGetModelExperience(experienceRepo.DeleteDetails(search));
+        }
+
+        public IEnumerable<Experience> DeleteAllTrainerExperience(string? mail)
+        {
+            int id = action.GetTrainerId(mail);
+            List<Experience> experiences = new List<Experience>();
+            var searches = experienceRepo.GetDetails().Where(l => l.Tid == id).ToList();
+            foreach (var search in searches)
+            {
+                experiences.Add(Mapper.MapGetModelExperience(experienceRepo.DeleteDetails(search)));
+            }
+            return experiences;
+        }
     }
 }

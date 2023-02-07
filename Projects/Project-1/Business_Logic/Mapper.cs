@@ -145,5 +145,36 @@ namespace Business_Logic
                 Tid = educationDetail.Tid,
             };
         }
+
+
+        // ---------------------- Experience Mapper ------------------------
+
+        public static DF.Experience MapGetEntityExperience(Experience experienceDetail)
+        {
+            return new DF.Experience()
+            {
+                Company = experienceDetail.Company,
+                Designation = experienceDetail.Designation,
+                OverallExperience = experienceDetail.OverallExperience,
+                Tid = experienceDetail.Tid,
+            };
+        }
+
+        public static IEnumerable<Experience> MapAllModelExperiences(IEnumerable<DF.Experience> experiences)
+        {
+            return experiences.Select(MapGetModelExperience);
+        }
+
+        public static Experience MapGetModelExperience(DF.Experience experienceDetail)
+        {
+            return new Experience()
+            {
+                Company = experienceDetail.Company,
+                Designation = experienceDetail.Designation,
+                OverallExperience = experienceDetail.OverallExperience,
+                Tid = experienceDetail.Tid,
+            };
+        }
+
     }
 }
