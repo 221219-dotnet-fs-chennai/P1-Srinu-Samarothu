@@ -25,6 +25,7 @@ builder.Services.AddScoped<ITrainerRepo<DF.TraineeTrainerDetail>, TrainerRepo>()
 builder.Services.AddScoped<ITrainerRepo<DF.TraineeContactDetail>, ContactRepo>();
 builder.Services.AddScoped<ITrainerRepo<DF.Education>, EducationRepo>();
 builder.Services.AddScoped<ITrainerRepo<DF.Experience>, ExperienceRepo>();
+builder.Services.AddScoped<ITrainerRepo<DF.Skill>, SkillRepo>();
 
 
 

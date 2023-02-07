@@ -8,10 +8,10 @@ namespace Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExperienceController : ControllerBase
+    public class SkillsController : ControllerBase
     {
         ILogic logic;
-        public ExperienceController(ILogic _logic)
+        public SkillsController(ILogic _logic)
         {
             logic = _logic;
         }
@@ -21,9 +21,9 @@ namespace Service.Controllers
         {
             try
             {
-                var experiences = logic.GetTrainerExperience(Email);
-                if (experiences != null)
-                    return Ok(experiences);
+                var skills = logic.GetTrainerSkill(Email);
+                if (skills != null)
+                    return Ok(skills);
                 else
                     return BadRequest("No Trainer logins found");
             }
@@ -38,13 +38,14 @@ namespace Service.Controllers
             }
         }
 
+
         [HttpPost("Add/{Email}")]
-        public ActionResult Add([FromRoute] string? Email, [FromBody] Experience experience)
+        public ActionResult Add([FromRoute] string? Email, [FromBody] Skill skill)
         {
             try
             {
-                var newTrainerExperience = logic.AddTrainerExperience(Email, experience);
-                return CreatedAtAction("Add", newTrainerExperience);
+                var newTrainerSkill = logic.AddTrainerSkill(Email, skill);
+                return CreatedAtAction("Add", newTrainerSkill);
             }
             catch (SqlException ex)
             {
@@ -55,8 +56,6 @@ namespace Service.Controllers
                 return BadRequest(e.Message);
             }
         }
-
-
 
         [HttpDelete("Delete/{Email}")]
         public ActionResult Delete([FromRoute] string? Email)
@@ -65,9 +64,9 @@ namespace Service.Controllers
             {
                 if (!string.IsNullOrEmpty(Email))
                 {
-                    var education = logic.DeleteAllTrainerExperience(Email);
-                    if (education != null)
-                        return Ok(education);
+                    var skill = logic.DeleteAllTrainerSkill(Email);
+                    if (skill != null)
+                        return Ok(skill);
                     else
                         return NotFound();
                 }
@@ -86,16 +85,16 @@ namespace Service.Controllers
 
         }
 
-        [HttpDelete("Delete/{Email}/{Company}")]
-        public ActionResult Delete([FromRoute] string? Email, [FromRoute] string? Company)
+        [HttpDelete("Delete/{Email}/{skill}")]
+        public ActionResult Delete([FromRoute] string? Email, [FromRoute] string? _skill)
         {
             try
             {
                 if (!string.IsNullOrEmpty(Email))
                 {
-                    var education = logic.DeleteTrainerExperience(Email, Company);
-                    if (education != null)
-                        return Ok(education);
+                    var skill = logic.DeleteTrainerExperience(Email, _skill);
+                    if (skill != null)
+                        return Ok(skill);
                     else
                         return NotFound();
                 }
@@ -114,16 +113,15 @@ namespace Service.Controllers
 
         }
 
-
-        [HttpPut("Modify/{Email}/{Company}")]
-        public ActionResult Update([FromRoute] string? Email, [FromRoute] string? Company, [FromBody] Experience experience)
+        [HttpPut("Modify/{Email}/{skill}")]
+        public ActionResult Update([FromRoute] string? Email, [FromRoute] string? skill, [FromBody] Skill modelSkill)
         {
             try
             {
-                if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Company))
+                if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(skill))
                 {
-                    logic.UpdateTrainerExperience(Email, Company, experience);
-                    return Ok(experience);
+                    logic.UpdateTrainerSkill(Email, skill, modelSkill);
+                    return Ok(modelSkill);
                 }
                 else
                     return BadRequest($"something wrong with {Email} input, please try again!");
@@ -137,8 +135,6 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
 
     }
 }

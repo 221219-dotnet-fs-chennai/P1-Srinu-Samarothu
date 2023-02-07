@@ -61,5 +61,17 @@ namespace Business_Logic
         public Experience DeleteTrainerExperience(string? mail, string? company);
 
         public IEnumerable<Experience> DeleteAllTrainerExperience(string? mail);
+
+        // --------------------- Trainer Skill Logic -----------------
+
+        public Skill AddTrainerSkill(string? mail, Skill skillDetails);
+
+        public IEnumerable<Skill> GetTrainerSkill(string? Email);
+
+        public void UpdateTrainerSkill(string? mail, string? skill, Skill trainer);
+
+        public Skill DeleteTrainerSkill(string? mail, string? skill);
+
+        public IEnumerable<Skill> DeleteAllTrainerSkill(string? mail);
     }
 }

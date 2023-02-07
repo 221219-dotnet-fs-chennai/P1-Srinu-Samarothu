@@ -176,5 +176,35 @@ namespace Business_Logic
             };
         }
 
+
+
+        // ---------------------- Skill Mapper ------------------------
+
+        public static DF.Skill MapGetEntitySkill(Skill skillDetail)
+        {
+            return new DF.Skill()
+            {
+                Skill1 = skillDetail.Skill1,
+                Proficiency = skillDetail.Proficiency,
+                Tid = skillDetail.Tid
+            };
+        }
+
+        public static IEnumerable<Skill> MapAllModelSkills(IEnumerable<DF.Skill> skills)
+        {
+            return skills.Select(MapGetModelSkill);
+        }
+
+        public static Skill MapGetModelSkill(DF.Skill skillDetail)
+        {
+            return new Skill()
+            {
+                Skill1 = skillDetail.Skill1,
+                Proficiency = skillDetail.Proficiency,
+                Tid = skillDetail.Tid
+            };
+        }
+
+
     }
 }

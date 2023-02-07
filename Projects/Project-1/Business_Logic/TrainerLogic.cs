@@ -17,12 +17,15 @@ namespace Business_Logic
         ITrainerRepo<DF.TraineeContactDetail> contactRepo;
         ITrainerRepo<DF.Education> educationRepo;
         ITrainerRepo<DF.Experience> experienceRepo;
-        public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, ITrainerRepo<DF.Education> _education, LogicActions _action)
+        ITrainerRepo<DF.Skill> skillRepo;
+        public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, ITrainerRepo<DF.Education> _education, ITrainerRepo<DF.Experience> _experience, ITrainerRepo<DF.Skill> _skill, LogicActions _action)
         {
             loginRepo = _login;
             trainerRepo = _trainer;
             contactRepo = _contact;
             educationRepo = _education;
+            experienceRepo = _experience;
+            skillRepo = _skill;
             action = _action;
         }
 
@@ -308,7 +311,7 @@ namespace Business_Logic
             experienceDetails.Tid = action.GetTrainerId(mail);
             var entityExperience = Mapper.MapGetEntityExperience(experienceDetails);
             experienceRepo.AddDetails(entityExperience);
-            return experienceDetails;
+            return Mapper.MapGetModelExperience(entityExperience);
         }
 
         public IEnumerable<Experience> GetTrainerExperience(string? Email)
@@ -323,7 +326,8 @@ namespace Business_Logic
             try
             {
                 int id = action.GetTrainerId(mail);
-                DF.Experience entityExperience = experienceRepo.GetDetails().Where(t => t.Tid == id && t.Company == company).First();
+                DF.Experience _entityExperience = experienceRepo.GetDetails().Where(t => t.Tid == id && t.Company == company).First();
+                var entityExperience = experienceRepo.DeleteDetails(_entityExperience);
 
                 if (entityExperience != null)
                 {
@@ -367,5 +371,73 @@ namespace Business_Logic
             }
             return experiences;
         }
+
+
+
+        // --------------------- Skill Details -----------------
+
+        public Skill AddTrainerSkill(string? mail, Skill skillDetails)
+        {
+            skillDetails.Tid = action.GetTrainerId(mail);
+            var entitySkill = Mapper.MapGetEntitySkill(skillDetails);
+            skillRepo.AddDetails(entitySkill);
+            return Mapper.MapGetModelSkill(entitySkill);
+        }
+
+        public IEnumerable<Skill> GetTrainerSkill(string? Email)
+        {
+            int id = action.GetTrainerId(Email);
+            List<DF.Skill> trainerSkill = skillRepo.GetDetails().Where(c => c.Tid == id).ToList();
+            return Mapper.MapAllModelSkills(trainerSkill);
+        }
+
+        public void UpdateTrainerSkill(string? mail, string? skill, Skill trainer)
+        {
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                DF.Skill _entitySkill = skillRepo.GetDetails().Where(t => t.Tid == id && t.Skill1 == skill).First();
+                var entitySkill = skillRepo.DeleteDetails(_entitySkill);
+
+                if (entitySkill != null)
+                {
+                    if (trainer.Skill1 != "string" && entitySkill.Skill1 != trainer.Skill1)
+                    {
+                        entitySkill.Skill1 = trainer.Skill1;
+                    }
+                    if (trainer.Proficiency != 0 && entitySkill.Proficiency != trainer.Proficiency)
+                    {
+                        entitySkill.Proficiency = trainer.Proficiency;
+                    }
+                    skillRepo.UpdateDetails(entitySkill);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        public Skill DeleteTrainerSkill(string? mail, string? skill)
+        {
+            int id = action.GetTrainerId(mail);
+            var search = skillRepo.GetDetails().Where(l => l.Tid == id && l.Skill1 == skill).First();
+            return Mapper.MapGetModelSkill(skillRepo.DeleteDetails(search));
+        }
+
+        public IEnumerable<Skill> DeleteAllTrainerSkill(string? mail)
+        {
+            int id = action.GetTrainerId(mail);
+            List<Skill> experiences = new List<Skill>();
+            var searches = skillRepo.GetDetails().Where(l => l.Tid == id).ToList();
+            foreach (var search in searches)
+            {
+                experiences.Add(Mapper.MapGetModelSkill(skillRepo.DeleteDetails(search)));
+            }
+            return experiences;
+        }
+
+
     }
 }

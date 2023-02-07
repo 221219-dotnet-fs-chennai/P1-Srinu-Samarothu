@@ -3,33 +3,33 @@ using DF = DataFluentApi.Entities;
 
 namespace DataFluentApi
 {
-    public class ExperienceRepo : ITrainerRepo<DF.Experience>
+    public class SkillRepo : ITrainerRepo<DF.Skill>
     {
         private readonly DF.TraineeDbContext dbContext;
 
-        public ExperienceRepo(DF.TraineeDbContext context)
+        public SkillRepo(DF.TraineeDbContext context)
         {
             dbContext = context;
         }
-        public void AddDetails(DF.Experience obj)
+        public void AddDetails(DF.Skill obj)
         {
             dbContext.Add(obj);
             dbContext.SaveChanges();
         }
 
-        public DF.Experience DeleteDetails(DF.Experience obj)
+        public DF.Skill DeleteDetails(DF.Skill obj)
         {
             dbContext.Remove(obj);
             dbContext.SaveChanges();
             return obj;
         }
 
-        public IEnumerable<DF.Experience> GetDetails()
+        public IEnumerable<DF.Skill> GetDetails()
         {
-            return dbContext.Experiences.ToList();
+            return dbContext.Skills.ToList();
         }
 
-        public void UpdateDetails(DF.Experience obj)
+        public void UpdateDetails(DF.Skill obj)
         {
             dbContext.Add(obj);
             dbContext.SaveChanges();
