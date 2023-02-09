@@ -86,6 +86,7 @@ namespace Service.Controllers
 
         }
 
+
         [HttpDelete("Delete/{Email}/{Company}")]
         public ActionResult Delete([FromRoute] string? Email, [FromRoute] string? Company)
         {

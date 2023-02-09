@@ -40,9 +40,9 @@ namespace Business_Logic
                         where trainer.Mail == mail
                         select trainer.Tid).First();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Please Enter Trainer details first");
             }
         }
 

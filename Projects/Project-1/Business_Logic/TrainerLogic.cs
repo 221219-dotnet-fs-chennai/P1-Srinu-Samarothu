@@ -3,12 +3,15 @@ using DataFluentApi;
 using Models;
 using System.Security.Cryptography;
 
+
 namespace Business_Logic
 {
     public class TrainerLogic : ILogic
     {
         static string? _mail;
         static int _id;
+
+        RegexValidation regex = new RegexValidation();
 
         LogicActions action;
 
@@ -36,8 +39,9 @@ namespace Business_Logic
 
         public TraineeLogin AddLogin(TraineeLogin details)
         {
-            _mail = details.Email;
 
+            regex.ValidateEmail(details.Email);
+            _mail = details.Email;
             DF.TraineeLogin entityLogin = Mapper.MapGetEntityLogin(details);
             loginRepo.AddDetails(entityLogin);
             return Mapper.MapGetModelLogin(entityLogin);
@@ -60,7 +64,8 @@ namespace Business_Logic
                 if (entitylogin != null)
                 {
                     if (login.Password != "string" && entitylogin.Password != login.Password) {
-                        entitylogin.Password = login.Password;
+                        if(regex.ValidatePassword(login.Password))
+                            entitylogin.Password = login.Password;
                     }
                     if (login.Tdstatus != 0 && entitylogin.Tdstatus != login.Tdstatus)
                     {
@@ -98,8 +103,15 @@ namespace Business_Logic
 
         public TraineeLogin DeleteLogin(string? mail)
         {
-            var search = loginRepo.GetDetails().Where(l => l.Email == mail).First();
-            return Mapper.MapGetModelLogin(loginRepo.DeleteDetails(search));
+            try
+            {
+                var search = loginRepo.GetDetails().Where(l => l.Email == mail).First();
+                return Mapper.MapGetModelLogin(loginRepo.DeleteDetails(search));
+            }
+            catch(Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
         
 
@@ -109,10 +121,12 @@ namespace Business_Logic
 
         public TraineeTrainerDetail AddTrainer(string? mail, TraineeTrainerDetail tDetails)
         {
+            regex.ValidateEmail(mail);
             _id = action.GetUniqueId();
             tDetails.Tid = _id;
             tDetails.Mail = mail;
 
+            regex.ValidateDOB(tDetails.Dob);
             var entityTrainer = Mapper.MapGetEntityTrainer(tDetails);
             trainerRepo.AddDetails(entityTrainer);
             return tDetails;
@@ -126,14 +140,28 @@ namespace Business_Logic
 
         public TraineeTrainerDetail GetTrainerDetails(string? Email)
         {
-            DF.TraineeTrainerDetail trainer = trainerRepo.GetDetails().Where(t => t.Mail == Email).First();
-            return Mapper.MapGetModelTrainer(trainer);
+            try
+            {
+                DF.TraineeTrainerDetail trainer = trainerRepo.GetDetails().Where(t => t.Mail == Email).First();
+                return Mapper.MapGetModelTrainer(trainer);
+            }
+            catch(Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
         public TraineeTrainerDetail DeleteTrainer(string? mail)
         {
-            var search = trainerRepo.GetDetails().Where(l => l.Mail == mail).First();
-            return Mapper.MapGetModelTrainer(trainerRepo.DeleteDetails(search));
+            try
+            {
+                var search = trainerRepo.GetDetails().Where(l => l.Mail == mail).First();
+                return Mapper.MapGetModelTrainer(trainerRepo.DeleteDetails(search));
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
 
@@ -155,7 +183,8 @@ namespace Business_Logic
                     }
                     if (trainer.Dob != "string" && entityTrainer.Dob != trainer.Dob)
                     {
-                        entityTrainer.Dob = trainer.Dob;
+                        if(regex.ValidateDOB(trainer.Dob))
+                            entityTrainer.Dob = trainer.Dob;
                     }
                     if (trainer.Gender != "string" && entityTrainer.Gender != trainer.Gender)
                     {
@@ -177,6 +206,9 @@ namespace Business_Logic
         {
             contactDetails.Tid = action.GetTrainerId(mail);
             contactDetails.MailId = mail;
+
+            regex.ValidateNumber(Convert.ToString(contactDetails.MobileNumber));
+            regex.ValidateZipcode(Convert.ToString(contactDetails.Zipcode));
             var entityContact = Mapper.MapGetEntityContact(contactDetails);
             contactRepo.AddDetails(entityContact);
             return contactDetails;
@@ -184,9 +216,16 @@ namespace Business_Logic
 
         public TraineeContactDetail GetTrainerContact(string? Email)
         {
-            int id = action.GetTrainerId(Email);
-            DF.TraineeContactDetail trainerContact = contactRepo.GetDetails().Where(c => c.Tid == id).First();
-            return Mapper.MapGetModelContact(trainerContact);
+            try
+            {
+                int id = action.GetTrainerId(Email);
+                DF.TraineeContactDetail trainerContact = contactRepo.GetDetails().Where(c => c.Tid == id).First();
+                return Mapper.MapGetModelContact(trainerContact);
+            }
+            catch(Exception) 
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
         public void UpdateTrainerContact(string? mail, TraineeContactDetail contact)
@@ -200,7 +239,8 @@ namespace Business_Logic
                 {
                     if(contact.MobileNumber != 0 && entityTrainer.MobileNumber != contact.MobileNumber)
                     {
-                        entityTrainer.MobileNumber = contact.MobileNumber;
+                        if(regex.ValidateNumber(Convert.ToString(contact.MobileNumber)))
+                            entityTrainer.MobileNumber = contact.MobileNumber;
                     }
                     if (contact.AddressLane != "string" && entityTrainer.AddressLane != contact.AddressLane)
                     {
@@ -216,7 +256,8 @@ namespace Business_Logic
                     }
                     if (contact.Zipcode != "string" && entityTrainer.Zipcode != contact.Zipcode)
                     {
-                        entityTrainer.Zipcode = contact.Zipcode;
+                        if(regex.ValidateZipcode(Convert.ToString(contact.Zipcode)))
+                            entityTrainer.Zipcode = contact.Zipcode;
                     }
                     contactRepo.UpdateDetails(entityTrainer);
                 }
@@ -229,9 +270,16 @@ namespace Business_Logic
 
         public TraineeContactDetail DeleteTrainerContact(string? mail)
         {
-            int id = action.GetTrainerId(mail);
-            var search = contactRepo.GetDetails().Where(l => l.Tid == id).First();
-            return Mapper.MapGetModelContact(contactRepo.DeleteDetails(search));
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                var search = contactRepo.GetDetails().Where(l => l.Tid == id).First();
+                return Mapper.MapGetModelContact(contactRepo.DeleteDetails(search));
+            }
+            catch(Exception) 
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
 
@@ -247,9 +295,16 @@ namespace Business_Logic
 
         public Education GetTrainerEducation(string? Email)
         {
-            int id = action.GetTrainerId(Email);
-            DF.Education trainerEducation = educationRepo.GetDetails().Where(c => c.Tid == id).First();
-            return Mapper.MapGetModelEducation(trainerEducation);
+            try
+            {
+                int id = action.GetTrainerId(Email);
+                DF.Education trainerEducation = educationRepo.GetDetails().Where(c => c.Tid == id).First();
+                return Mapper.MapGetModelEducation(trainerEducation);
+            }
+            catch(Exception) 
+            { 
+                throw new Exception("Email does not exist"); 
+            }
         }
 
 
@@ -298,9 +353,16 @@ namespace Business_Logic
 
         public Education DeleteTrainerEducation(string? mail)
         {
-            int id = action.GetTrainerId(mail);
-            var search = educationRepo.GetDetails().Where(l => l.Tid == id).First();
-            return Mapper.MapGetModelEducation(educationRepo.DeleteDetails(search));
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                var search = educationRepo.GetDetails().Where(l => l.Tid == id).First();
+                return Mapper.MapGetModelEducation(educationRepo.DeleteDetails(search));
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
 
@@ -316,9 +378,16 @@ namespace Business_Logic
 
         public IEnumerable<Experience> GetTrainerExperience(string? Email)
         {
-            int id = action.GetTrainerId(Email);
-            List<DF.Experience> trainerExperience = experienceRepo.GetDetails().Where(c => c.Tid == id).ToList();
-            return Mapper.MapAllModelExperiences(trainerExperience);
+            try
+            {
+                int id = action.GetTrainerId(Email);
+                List<DF.Experience> trainerExperience = experienceRepo.GetDetails().Where(c => c.Tid == id).ToList();
+                return Mapper.MapAllModelExperiences(trainerExperience);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
         public void UpdateTrainerExperience(string? mail, string? company, Experience experience)
@@ -355,21 +424,35 @@ namespace Business_Logic
 
         public Experience DeleteTrainerExperience(string? mail, string? company)
         {
-            int id = action.GetTrainerId(mail);
-            var search = experienceRepo.GetDetails().Where(l => l.Tid == id && l.Company == company).First();
-            return Mapper.MapGetModelExperience(experienceRepo.DeleteDetails(search));
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                var search = experienceRepo.GetDetails().Where(l => l.Tid == id && l.Company == company).First();
+                return Mapper.MapGetModelExperience(experienceRepo.DeleteDetails(search));
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email or Company does not exist");
+            }
         }
 
         public IEnumerable<Experience> DeleteAllTrainerExperience(string? mail)
         {
-            int id = action.GetTrainerId(mail);
-            List<Experience> experiences = new List<Experience>();
-            var searches = experienceRepo.GetDetails().Where(l => l.Tid == id).ToList();
-            foreach (var search in searches)
+            try
             {
-                experiences.Add(Mapper.MapGetModelExperience(experienceRepo.DeleteDetails(search)));
+                int id = action.GetTrainerId(mail);
+                List<Experience> experiences = new List<Experience>();
+                var searches = experienceRepo.GetDetails().Where(l => l.Tid == id).ToList();
+                foreach (var search in searches)
+                {
+                    experiences.Add(Mapper.MapGetModelExperience(experienceRepo.DeleteDetails(search)));
+                }
+                return experiences;
             }
-            return experiences;
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
 
@@ -386,9 +469,16 @@ namespace Business_Logic
 
         public IEnumerable<Skill> GetTrainerSkill(string? Email)
         {
-            int id = action.GetTrainerId(Email);
-            List<DF.Skill> trainerSkill = skillRepo.GetDetails().Where(c => c.Tid == id).ToList();
-            return Mapper.MapAllModelSkills(trainerSkill);
+            try
+            {
+                int id = action.GetTrainerId(Email);
+                List<DF.Skill> trainerSkill = skillRepo.GetDetails().Where(c => c.Tid == id).ToList();
+                return Mapper.MapAllModelSkills(trainerSkill);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
         public void UpdateTrainerSkill(string? mail, string? skill, Skill trainer)
@@ -421,21 +511,35 @@ namespace Business_Logic
 
         public Skill DeleteTrainerSkill(string? mail, string? skill)
         {
-            int id = action.GetTrainerId(mail);
-            var search = skillRepo.GetDetails().Where(l => l.Tid == id && l.Skill1 == skill).First();
-            return Mapper.MapGetModelSkill(skillRepo.DeleteDetails(search));
+            try
+            {
+                int id = action.GetTrainerId(mail);
+                var search = skillRepo.GetDetails().Where(l => l.Tid == id && l.Skill1 == skill).First();
+                return Mapper.MapGetModelSkill(skillRepo.DeleteDetails(search));
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email or Skill does not exist");
+            }
         }
 
         public IEnumerable<Skill> DeleteAllTrainerSkill(string? mail)
         {
-            int id = action.GetTrainerId(mail);
-            List<Skill> experiences = new List<Skill>();
-            var searches = skillRepo.GetDetails().Where(l => l.Tid == id).ToList();
-            foreach (var search in searches)
+            try
             {
-                experiences.Add(Mapper.MapGetModelSkill(skillRepo.DeleteDetails(search)));
+                int id = action.GetTrainerId(mail);
+                List<Skill> experiences = new List<Skill>();
+                var searches = skillRepo.GetDetails().Where(l => l.Tid == id).ToList();
+                foreach (var search in searches)
+                {
+                    experiences.Add(Mapper.MapGetModelSkill(skillRepo.DeleteDetails(search)));
+                }
+                return experiences;
             }
-            return experiences;
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
         }
 
 
