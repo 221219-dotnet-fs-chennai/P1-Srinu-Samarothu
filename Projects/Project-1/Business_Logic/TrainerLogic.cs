@@ -1,8 +1,10 @@
 ﻿using DF = DataFluentApi.Entities;
+using DV = DataFluentApi.Views;
 using DataFluentApi;
 using Models;
 using System.Security.Cryptography;
-
+using DataFluentApi.Views;
+using System.Linq;
 
 namespace Business_Logic
 {
@@ -21,7 +23,8 @@ namespace Business_Logic
         ITrainerRepo<DF.Education> educationRepo;
         ITrainerRepo<DF.Experience> experienceRepo;
         ITrainerRepo<DF.Skill> skillRepo;
-        public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, ITrainerRepo<DF.Education> _education, ITrainerRepo<DF.Experience> _experience, ITrainerRepo<DF.Skill> _skill, LogicActions _action)
+        IFilterRepo<DV.VirtualTable> filterRepo;
+        public TrainerLogic(ITrainerRepo<DF.TraineeLogin> _login, ITrainerRepo<DF.TraineeTrainerDetail> _trainer, ITrainerRepo<DF.TraineeContactDetail> _contact, ITrainerRepo<DF.Education> _education, ITrainerRepo<DF.Experience> _experience, ITrainerRepo<DF.Skill> _skill, IFilterRepo<DV.VirtualTable> _filterRepo, LogicActions _action)
         {
             loginRepo = _login;
             trainerRepo = _trainer;
@@ -29,6 +32,7 @@ namespace Business_Logic
             educationRepo = _education;
             experienceRepo = _experience;
             skillRepo = _skill;
+            filterRepo = _filterRepo;
             action = _action;
         }
 
@@ -542,6 +546,64 @@ namespace Business_Logic
             }
         }
 
+
+
+        // ---------------------- Filtering -----------------------
+
+
+        public IEnumerable<SkillFilter> GetTrainersBySkill(string? skill) 
+        {
+            var filterTable = filterRepo.GetVirtualTable();
+            List<SkillFilter> skillFilters = new List<SkillFilter>();
+            List<int> ids = (from s in skillRepo.GetDetails()
+                             where s.Skill1 == skill
+                             select s.Tid).ToList();
+            foreach (VirtualTable vtable in filterTable)
+            {
+                if (ids.Contains(vtable.Tid))
+                {
+                    skillFilters.Add(new SkillFilter()
+                    {
+                        FirstName = vtable.FirstName,
+                        LastName = vtable.LastName,
+                        Gender = vtable.Gender,
+                        City = vtable.City,
+                        skill = (from s in skillRepo.GetDetails()
+                                 where vtable.Tid == s.Tid && s.Skill1 == skill
+                                 select s.Skill1).First(),
+                        proficiency = (from s in skillRepo.GetDetails()
+                                       where vtable.Tid == s.Tid && s.Skill1 == skill
+                                       select s.Proficiency).First()
+                    });
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return skillFilters;
+        }
+
+
+        public IEnumerable<GenderFilter> GetTrainerByGender(string? gender)
+        {
+            var filterTable = filterRepo.GetVirtualTable().Where(f => f.Gender == gender);
+            List<GenderFilter> genderFilters = new List<GenderFilter>();
+
+            foreach(VirtualTable vtable in filterTable)
+            {
+                genderFilters.Add(new GenderFilter()
+                {
+                    FirstName = vtable.FirstName,
+                    LastName = vtable.LastName,
+                    Gender = vtable.Gender,
+                    City = vtable.City,
+                    State = vtable.State,
+                    Zipcode = vtable.Zipcode,
+                });
+            }
+            return genderFilters;
+        }
 
     }
 }

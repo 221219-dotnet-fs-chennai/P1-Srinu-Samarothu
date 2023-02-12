@@ -1,6 +1,7 @@
 using Business_Logic;
 using Microsoft.EntityFrameworkCore;
 using DF = DataFluentApi.Entities;
+using DV = DataFluentApi.Views;
 using Models;
 using DataFluentApi;
 
@@ -16,6 +17,7 @@ builder.Services.AddSwaggerGen();
 
 var obj = builder.Configuration.GetConnectionString("TrainerDB");
 builder.Services.AddDbContext<DF.TraineeDbContext>(options => options.UseSqlServer(obj));
+builder.Services.AddDbContext<DV.TraineeDbContext>(options => options.UseSqlServer(obj));
 
 
 builder.Services.AddScoped<ILogic, TrainerLogic>();
@@ -26,6 +28,7 @@ builder.Services.AddScoped<ITrainerRepo<DF.TraineeContactDetail>, ContactRepo>()
 builder.Services.AddScoped<ITrainerRepo<DF.Education>, EducationRepo>();
 builder.Services.AddScoped<ITrainerRepo<DF.Experience>, ExperienceRepo>();
 builder.Services.AddScoped<ITrainerRepo<DF.Skill>, SkillRepo>();
+builder.Services.AddScoped<IFilterRepo<DV.VirtualTable>, FilterRepo>();
 
 
 

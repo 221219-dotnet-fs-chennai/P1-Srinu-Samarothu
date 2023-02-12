@@ -1,4 +1,6 @@
-﻿using DF = DataFluentApi.Entities;
+﻿using DataFluentApi;
+using DF = DataFluentApi.Entities;
+using Models;
 
 
 namespace Business_Logic
@@ -43,6 +45,20 @@ namespace Business_Logic
             catch(Exception)
             {
                 throw new Exception("Please Enter Trainer details first");
+            }
+        }
+
+        public string? GetSkill(int? id)
+        {
+            try
+            {
+                return (from s in context.Skills
+                        where id == s.Tid
+                        select s.Skill1).FirstOrDefault();
+            }
+            catch(Exception)
+            {
+                return null;
             }
         }
 

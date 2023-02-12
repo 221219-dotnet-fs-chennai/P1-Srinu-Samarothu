@@ -73,5 +73,13 @@ namespace Business_Logic
         public Skill DeleteTrainerSkill(string? mail, string? skill);
 
         public IEnumerable<Skill> DeleteAllTrainerSkill(string? mail);
+
+
+        // ---------------------- Filtering -----------------------
+
+        public IEnumerable<SkillFilter> GetTrainersBySkill(string? skill);
+
+        public IEnumerable<GenderFilter> GetTrainerByGender(string? gender);
+
     }
 }
