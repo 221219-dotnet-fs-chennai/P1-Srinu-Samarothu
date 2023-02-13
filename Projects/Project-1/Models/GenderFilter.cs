@@ -14,6 +14,8 @@ namespace Models
 
         public string? Gender { get; set; }
 
+        public Dictionary<string, int>? allSkills { get; set; }
+
         public string? City { get; set; }
 
         public string? State { get; set; }

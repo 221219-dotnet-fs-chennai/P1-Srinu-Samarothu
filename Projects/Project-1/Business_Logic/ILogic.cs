@@ -81,5 +81,9 @@ namespace Business_Logic
 
         public IEnumerable<GenderFilter> GetTrainerByGender(string? gender);
 
+        public IEnumerable<SkillFilter> GetTrainersBySkillAndGender(string? skill, string? gender);
+
+        public IEnumerable<GenderFilter> GetTrainerByCity(string? city);
+
     }
 }

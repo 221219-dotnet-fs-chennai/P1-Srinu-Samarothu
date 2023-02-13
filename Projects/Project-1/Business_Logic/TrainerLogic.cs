@@ -585,6 +585,40 @@ namespace Business_Logic
         }
 
 
+        public IEnumerable<SkillFilter> GetTrainersBySkillAndGender(string? skill, string? gender)
+        {
+            var filterTable = filterRepo.GetVirtualTable();
+            List<SkillFilter> skillFilters = new List<SkillFilter>();
+            List<int> ids = (from s in skillRepo.GetDetails()
+                             where s.Skill1 == skill
+                             select s.Tid).ToList();
+            foreach (VirtualTable vtable in filterTable)
+            {
+                if (ids.Contains(vtable.Tid) && vtable.Gender == gender)
+                {
+                    skillFilters.Add(new SkillFilter()
+                    {
+                        FirstName = vtable.FirstName,
+                        LastName = vtable.LastName,
+                        Gender = vtable.Gender,
+                        City = vtable.City,
+                        skill = (from s in skillRepo.GetDetails()
+                                 where vtable.Tid == s.Tid && s.Skill1 == skill
+                                 select s.Skill1).First(),
+                        proficiency = (from s in skillRepo.GetDetails()
+                                       where vtable.Tid == s.Tid && s.Skill1 == skill
+                                       select s.Proficiency).First()
+                    });
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return skillFilters;
+        }
+
+
         public IEnumerable<GenderFilter> GetTrainerByGender(string? gender)
         {
             var filterTable = filterRepo.GetVirtualTable().Where(f => f.Gender == gender);
@@ -597,6 +631,29 @@ namespace Business_Logic
                     FirstName = vtable.FirstName,
                     LastName = vtable.LastName,
                     Gender = vtable.Gender,
+                    allSkills = action.GetSkillDictionary(vtable.Tid) ?? null,
+                    City = vtable.City,
+                    State = vtable.State,
+                    Zipcode = vtable.Zipcode,
+                }) ;
+            }
+            return genderFilters;
+        }
+
+
+        public IEnumerable<GenderFilter> GetTrainerByCity(string? city)
+        {
+            var filterTable = filterRepo.GetVirtualTable().Where(f => f.City == city);
+            List<GenderFilter> genderFilters = new List<GenderFilter>();
+
+            foreach (VirtualTable vtable in filterTable)
+            {
+                genderFilters.Add(new GenderFilter()
+                {
+                    FirstName = vtable.FirstName,
+                    LastName = vtable.LastName,
+                    Gender = vtable.Gender,
+                    allSkills = action.GetSkillDictionary(vtable.Tid) ?? null,
                     City = vtable.City,
                     State = vtable.State,
                     Zipcode = vtable.Zipcode,
@@ -604,6 +661,7 @@ namespace Business_Logic
             }
             return genderFilters;
         }
+
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Business_Logic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace Service.Controllers
 {
@@ -15,13 +16,13 @@ namespace Service.Controllers
             logic = _logic;
         }
 
-        [HttpGet("BySkill/{skill}")]
+        [HttpGet("BySkill/{Skill}")]
 
-        public ActionResult GetTrainersBySkill([FromRoute] string skill)
+        public ActionResult GetTrainersBySkill([FromRoute] string Skill)
         {
             try
             {
-                var x = logic.GetTrainersBySkill(skill);
+                var x = logic.GetTrainersBySkill(Skill);
                 if (x != null)
                     return Ok(x);
                 else
@@ -40,6 +41,45 @@ namespace Service.Controllers
             try
             {
                 var x = logic.GetTrainerByGender(Gender);
+                if (x != null)
+                    return Ok(x);
+                else
+                    return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("BySkill/{Skill}/{Gender}")]
+
+        public ActionResult GetTrainersBySkillAndGender([FromRoute] string Skill, [FromRoute] string Gender)
+        {
+            try
+            {
+                var x = logic.GetTrainersBySkillAndGender(Skill, Gender);
+                if (x != null)
+                    return Ok(x);
+                else
+                    return NoContent();
+            }  
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        [HttpGet("ByCity/{City}")]
+
+        public ActionResult GetTrainersByCity([FromRoute] string City)
+        {
+            try
+            {
+                var x = logic.GetTrainerByCity(City);
                 if (x != null)
                     return Ok(x);
                 else

@@ -48,17 +48,23 @@ namespace Business_Logic
             }
         }
 
-        public string? GetSkill(int? id)
+        public Dictionary<string, int> GetSkillDictionary(int? id)
         {
             try
             {
-                return (from s in context.Skills
+                Dictionary<string, int> dict = new Dictionary<string, int>();
+                var skillList = (from s in context.Skills
                         where id == s.Tid
-                        select s.Skill1).FirstOrDefault();
+                        select s);
+                foreach (var skill in skillList)
+                {
+                    dict.Add(skill.Skill1, skill.Proficiency);
+                }
+                return dict;
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                return null;
+                throw new Exception(ex.Message);
             }
         }
 
