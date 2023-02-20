@@ -1,0 +1,177 @@
+.contact{
+    position : absolute;
+    margin-top: 3%;
+    margin-left : 25%;
+    width : 50%;
+    height: 500px;
+}
+.form-control:hover,.form-select:hover{
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+h2{
+    color : rgb(24, 24, 128);
+}
+.navbar{
+    position : sticky;
+    display : flex;
+    width : 100%;
+    height : 10%;
+    background-color: rgb(24, 24, 128);
+}
+.home{
+    font-weight: 200px;
+    font-size: 20px;
+    padding : 15px;
+    text-decoration: none;
+    color :aliceblue;
+}
+.canvassetting{
+    font-weight: 200px;
+    font-size: 25px;
+    padding : 15px;
+    text-decoration: none;
+    color :Black;
+}
+.search {
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 200px;
+    height : 10%;
+    right : 325px;
+    top : 8px;
+}
+.settings {
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 170px;
+    height : 10%;
+    right : 30px;
+    top : 8px;
+}
+.login{
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 146px;
+    height : 10%;
+    right : 190px;
+    top : 8px;
+}
+.hm{
+    text-decoration: none;
+}
+.trainer{
+    position : relative;
+    margin-right : 10px;
+    font-weight: 200px;
+    font-size: 20px;
+    color : white;
+    text-decoration: none;
+}
+.search-img{
+    position : absolute;
+    height: 40px;
+    width: 40px;
+    padding : 10px;
+    right : 30px;
+    top : 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+.search-img:hover{
+    position : absolute;
+    height: 43px;
+    width: 43px;
+    padding : 10px;
+    right : 28px;
+    top : 9px;
+    border-radius: 30px;
+    background-color: aqua;
+}
+.fa-solid{
+    display : flex;
+    height : 50px;
+    width: 50px;
+    color: black;
+}
+
+.button:hover{
+    padding: 10px;
+    width : 80px;
+    font-weight: bolder;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+
+
+
+
+.searchs{
+    position : relative;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    margin : 20px;
+    height : 15%;
+    width : 60%;
+    background-color: blueviolet;
+}
+.search1{
+    position : relative;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    margin : 10px;
+    height : 15%;
+    width : 80%;
+    background-color: blueviolet;
+}
+.collapse{
+    position : relative;
+    width : 80%;
+}
+.btn-primary{
+    position : relative;
+    background-color: white;
+    border-color: white;
+    color : rgb(37, 36, 36);
+    width : 100%;
+    margin-left: 0px;
+}
+p{
+    position : relative;
+    margin-left: 0px;
+}
+.btn-info{
+    position : relative;
+    width : 25%;
+}
+.btn-info:hover{
+    position : relative;
+    width : 25%;
+    font-weight: bolder;
+    color : whitesmoke;
+    background-color: rgb(24, 24, 128);
+    border-color: rgb(24, 24, 128);
+}
+h5 {
+    color: rgb(72, 18, 18);
+}
+.input-group-text{
+    font-weight: bolder;
+}
+.sh{
+    color: rgb(172, 12, 12);
+}
+.card{
+    position: relative;
+    margin : 25px;
+}
+/* #scrollDiv {
+    overflow-x:hidden;
+    overflow-y:visible;
+    height:2000px;
+} */

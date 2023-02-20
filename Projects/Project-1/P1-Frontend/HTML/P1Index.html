@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/P1Index.css">
+</head>
+<body>
+
+   <div class="navbar">
+    <a class="home" href="" aria-disabled="true"><b>HOME</b></a>
+    
+    <div class="search">
+    <p class="trainer"><b>Find trainer</b></p>
+    <a href="../HTML/Search.html" class="hm"><img class="search-img" src="../Images/search.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+    <div class="settings">
+        <p class="trainer"><b>Settings</b></p>
+        <a href="#" class="hm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="search-img" src="../Images/gear.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+    <div class="login">
+        <p class="trainer"><b>Login</b></p>
+        <a href="../HTML/Login.html" class="hm"><img class="search-img" src="../Images/login.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+   </div>
+
+
+   <div class="hero-image">
+    <div class="hero-text">
+      <h1>Find trainers</h1>
+      <p style ="color:red">or else</p>
+      <h1>Be a trainer</h1>
+    </div>
+  </div>
+
+   <!-- Canvas bootstrap code -->
+   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+     <div class="offcanvas-header">
+       <p class="canvassetting offcanvas-title"  id="offcanvasWithBothOptionsLabel"><strong>Settings</strong></p>
+       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+     </div>
+     <div class="offcanvas-body">
+       <!-- <p>Try scrolling the rest of the page to see this option in action.</p> -->
+       <div class="dropdown mt-md-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">General</a></li>
+          <li><a class="dropdown-item" href="#">About Us</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+     </div>
+   </div>
+
+      
+</body>
+</html>

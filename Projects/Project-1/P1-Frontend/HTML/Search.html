@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find trainers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/Search.css">
+    <script src="../JS/FindTrainer.js"></script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a class="home" href="../HTML/P1Index.html"><b>HOME</b></a>
+        
+
+        <div class="settings">
+            <p class="trainer"><b>Settings</b></p>
+            <a href="#" class="hm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="search-img" src="../Images/gear.svg" alt="..." width="20px" height="20px"></a>
+        </div>
+        <div class="login">
+            <p class="trainer"><b>Login</b></p>
+            <a href="../HTML/Login.html" class="hm"><img class="search-img" src="../Images/login.svg" alt="..." width="20px" height="20px"></a>
+        </div>
+       </div>
+
+       <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <p class="canvassetting offcanvas-title"  id="offcanvasWithBothOptionsLabel"><strong>Settings</strong></p>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- <p>Try scrolling the rest of the page to see this option in action.</p> -->
+          <div class="dropdown mt-md-2">
+           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+             Dropdown button
+           </button>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">General</a></li>
+             <li><a class="dropdown-item" href="#">About Us</a></li>
+             <li><a class="dropdown-item" href="#">Log out</a></li>
+           </ul>
+         </div>
+        </div>
+        </div>
+
+
+       
+
+
+        <div class="contact" id="scrollDiv">
+            <h2 style="text-align:center"> <b>FIND TRAINERS HERE</b> </h2>
+            <br>
+            <h5 ><b>Find trainers by <span class="sh">skill</span></b></h5>
+            <br>
+        <form class="row g-3">
+            <div class="card card-body">
+                <form class="skillForm">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Skill</span>
+                    <input id="skill" type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default"  name="skill">
+                </div>
+                <div class="col-auto">
+                <button id="skillbtn" onclick="SearchBySkill()" type="submit" class="btn btn-info"><b>Find</b></button>
+                </div>  
+                </form>
+            </div>
+            
+    
+              <h5 ><b>Find trainers by <span class="sh">location</span> </b></h5>
+
+              <div class="card card-body">
+                <form class="cityForm">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">City</span>
+                    <input id="city" type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" name="city">
+                </div>
+                <button id="citybtn" onclick="SearchByLocation()" type="submit" class="btn btn-info cityFind" ><b>Find</b></button>
+                </form>
+            </div>
+
+              <h5 ><b>Find trainers by <span class="sh">Gender</span> </b></h5>
+
+              <div class="card card-body">
+                <form class="genderForm">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Gender</span>
+                    <input id="gender" type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default" name="gender">
+                </div>
+                <button id="genderbtn" onclick="SearchByGender()" type="submit" class="btn btn-info genderFind"><b>Find</b></button>
+                </form>
+            </div>
+
+            <h5 ><b>Find trainers <span class="sh">skill & gender</span></b></h5>
+              
+              <div class="card card-body">
+                <form class="sgForm">
+                  <div class="input-group">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Skill</span>
+                      <input id="skill1" type="text" class="form-control" aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-default" name="skill1">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Gender</span>
+                      <input id="gender1" type="text" class="form-control" aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-default" name="gender1">
+                  </div>
+                    <br>
+                <button id="sgbtn" onclick="SearchBySkillGender()" type="submit" class="btn btn-info sgFilter"><b>Find</b></button>
+                
+                </form>
+                
+              </div>
+              <!-- <h2 id="h2id">Search results</h2> -->
+              <br><br><br><br><div id="divid"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </form>
+        </div>
+
+</body>
+</html>

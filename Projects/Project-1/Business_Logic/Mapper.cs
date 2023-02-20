@@ -13,12 +13,7 @@ namespace Business_Logic
             return new TraineeLogin()
                 {
                     Email = login.Email,
-                    Password = null,
-                    Tdstatus = login.Tdstatus,
-                    Cdstatus = login.Cdstatus,
-                    Edustatus = login.Edustatus,
-                    Edstatus = login.Edstatus,
-                    Sdstatus = login.Sdstatus
+                    Password = null
                 };
         }
 
@@ -37,11 +32,11 @@ namespace Business_Logic
             {
                 Email = modelLogin.Email,
                 Password = modelLogin.Password,
-                Tdstatus = modelLogin.Tdstatus,
-                Cdstatus = modelLogin.Cdstatus,
-                Edstatus = modelLogin.Edstatus,
-                Edustatus = modelLogin.Edustatus,
-                Sdstatus = modelLogin.Sdstatus
+                Tdstatus = 0,
+                Cdstatus = 0,
+                Edstatus= 0,
+                Edustatus= 0,
+                Sdstatus= 0
             };
         }
 

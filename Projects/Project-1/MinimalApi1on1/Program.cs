@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Common;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -72,6 +73,8 @@ public class Trainer
     public string firstName { get; set; }
     public string lastName { get; set; }
     public int experience { get; set; }
+
+    [Key]
     public string email { get; set; }
     public string company { get; set; }
 }

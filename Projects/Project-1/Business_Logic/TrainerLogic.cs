@@ -45,15 +45,23 @@ namespace Business_Logic
         {
 
             regex.ValidateEmail(details.Email);
+            regex.ValidatePassword(details.Password);
             _mail = details.Email;
             DF.TraineeLogin entityLogin = Mapper.MapGetEntityLogin(details);
             loginRepo.AddDetails(entityLogin);
             return Mapper.MapGetModelLogin(entityLogin);
         }
 
-        public IEnumerable<TraineeLogin> GetLoginDetails()
+        public TraineeLogin GetLoginDetails(string email, string password)
         {
-            return Mapper.MapAllLogins(loginRepo.GetDetails());
+            try
+            {
+                return Mapper.MapGetModelLogin(loginRepo.GetDetails().Where(l => l.Email == email && l.Password == password).FirstOrDefault());
+            }
+            catch(Exception)
+            {
+                throw new Exception("User does not exist!!!");
+            }
         }
 
 
@@ -70,26 +78,6 @@ namespace Business_Logic
                     if (login.Password != "string" && entitylogin.Password != login.Password) {
                         if(regex.ValidatePassword(login.Password))
                             entitylogin.Password = login.Password;
-                    }
-                    if (login.Tdstatus != 0 && entitylogin.Tdstatus != login.Tdstatus)
-                    {
-                        entitylogin.Tdstatus = login.Tdstatus;
-                    }
-                    if (login.Cdstatus != 0 && entitylogin.Cdstatus != login.Cdstatus)
-                    {
-                        entitylogin.Cdstatus = login.Cdstatus;
-                    }
-                    if (login.Edustatus != 0 && entitylogin.Edustatus != login.Edustatus)
-                    {
-                        entitylogin.Edustatus = login.Edustatus;
-                    }
-                    if (login.Edstatus != 0 && entitylogin.Edstatus != login.Edstatus)
-                    {
-                        entitylogin.Edstatus = login.Edstatus;
-                    }
-                    if (login.Sdstatus != 0 && entitylogin.Sdstatus != login.Sdstatus)
-                    {
-                        entitylogin.Sdstatus = login.Sdstatus;
                     }
                     loginRepo.UpdateDetails(entitylogin);
                 }
@@ -123,12 +111,12 @@ namespace Business_Logic
         //-------------------- Trainer Details --------------------
 
 
-        public TraineeTrainerDetail AddTrainer(string? mail, TraineeTrainerDetail tDetails)
+        public TraineeTrainerDetail AddTrainer(TraineeTrainerDetail tDetails)
         {
-            regex.ValidateEmail(mail);
+            regex.ValidateEmail(tDetails.Mail);
             _id = action.GetUniqueId();
             tDetails.Tid = _id;
-            tDetails.Mail = mail;
+            //tDetails.Mail = mail;
 
             regex.ValidateDOB(tDetails.Dob);
             var entityTrainer = Mapper.MapGetEntityTrainer(tDetails);
@@ -177,20 +165,20 @@ namespace Business_Logic
 
                 if (entityTrainer != null)
                 {
-                    if (trainer.FirstName != "string" && entityTrainer.FirstName != trainer.FirstName)
+                    if (entityTrainer.FirstName != trainer.FirstName)
                     {
                         entityTrainer.FirstName = trainer.FirstName;
                     }
-                    if (trainer.LastName != "string" && entityTrainer.LastName != trainer.LastName)
+                    if (entityTrainer.LastName != trainer.LastName)
                     {
                         entityTrainer.LastName = trainer.LastName;
                     }
-                    if (trainer.Dob != "string" && entityTrainer.Dob != trainer.Dob)
+                    if (entityTrainer.Dob != trainer.Dob)
                     {
                         if(regex.ValidateDOB(trainer.Dob))
                             entityTrainer.Dob = trainer.Dob;
                     }
-                    if (trainer.Gender != "string" && entityTrainer.Gender != trainer.Gender)
+                    if (entityTrainer.Gender != trainer.Gender)
                     {
                         entityTrainer.Gender = trainer.Gender;
                     }
@@ -209,7 +197,9 @@ namespace Business_Logic
         public TraineeContactDetail AddTrainerContact(string? mail, TraineeContactDetail contactDetails)
         {
             contactDetails.Tid = action.GetTrainerId(mail);
-            contactDetails.MailId = mail;
+            //contactDetails.MailId = mail;
+
+            regex.ValidateEmail(contactDetails.MailId);
 
             regex.ValidateNumber(Convert.ToString(contactDetails.MobileNumber));
             regex.ValidateZipcode(Convert.ToString(contactDetails.Zipcode));

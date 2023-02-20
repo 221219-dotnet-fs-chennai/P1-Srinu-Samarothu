@@ -1,0 +1,111 @@
+.navbar{
+    position : sticky;
+    display : flex;
+    width : 100%;
+    height : 10%;
+    background-color: blue;
+}
+.home{
+    font-weight: 200px;
+    font-size: 20px;
+    padding : 15px;
+    text-decoration: none;
+    color :aliceblue;
+}
+.canvassetting{
+    font-weight: 200px;
+    font-size: 25px;
+    padding : 15px;
+    text-decoration: none;
+    color :blue;
+}
+.search {
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 200px;
+    height : 10%;
+    right : 325px;
+    top : 8px;
+}
+.settings {
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 170px;
+    height : 10%;
+    right : 30px;
+    top : 8px;
+}
+.login{
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 146px;
+    height : 10%;
+    right : 190px;
+    top : 8px;
+}
+.hm{
+    text-decoration: none;
+}
+.trainer{
+    position : relative;
+    margin-right : 10px;
+    font-weight: 200px;
+    font-size: 20px;
+    color : white;
+    text-decoration: none;
+}
+.search-img{
+    position : absolute;
+    height: 40px;
+    width: 40px;
+    padding : 10px;
+    right : 30px;
+    top : 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+.search-img:hover{
+    position : absolute;
+    height: 43px;
+    width: 43px;
+    padding : 10px;
+    right : 28px;
+    top : 9px;
+    border-radius: 30px;
+    background-color: whitesmoke;
+}
+.fa-solid{
+    display : flex;
+    height : 50px;
+    width: 50px;
+    color: black;
+}
+
+
+body, html {
+    height: 100%;
+}
+
+.hero-image {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+
+
+  height: 80%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: blue;
+}

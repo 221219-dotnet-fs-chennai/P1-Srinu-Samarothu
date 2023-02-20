@@ -1,0 +1,269 @@
+.trainer-cards{
+   display : flex;
+   /* grid-template-columns: auto auto auto; */
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+
+
+.trainer-img{
+    position : relative;
+    padding : 0px 50px 10px 50px;
+    /* padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px; */
+    height :218px;
+    width : 286px;
+    background-image: linear-gradient(to bottom,#C6EA8D , #FE90AF);
+}
+.contact-img{
+    position : relative;
+    padding : 30px 50px 30px 50px;
+    height :218px;
+    width : 286px;
+    background-image: linear-gradient(to bottom,#2E3192, #1BFFFF);
+}
+.education-img{
+    position : relative;
+    padding : 0px 50px 10px 50px;
+    height :218px;
+    width : 286px;
+    background-image: linear-gradient(to bottom,#02AABD , #00CDAC);
+}
+.skill-img{
+    position : relative;
+    padding : 40px 50px 40px 50px;
+    height : 218px;
+    width : 286px;
+    background-image: linear-gradient(to bottom,#09203F, #537895);
+}
+.experience-img{
+    position : relative;
+    padding : 40px 50px 40px 50px;
+    height : 218px;
+    width : 286px;
+    background-image: linear-gradient(to bottom,#FF5F6D, #FFC371);
+}
+.trainer{
+    text-align: center;
+}
+.contact{
+    text-align: center;
+}
+.education{
+    text-align: center;
+}
+.skill{
+    text-align: center;
+}
+.experience{
+    text-align: center;
+}
+
+.buttons{
+    position :relative;
+    width : 250px;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+#deletebtn {
+    position :relative;
+    right : 0px; 
+    transform: translate(890%,-10%);
+    font-weight: bold;
+}
+#deletebtn:hover {
+    position :relative;
+    right : 0px; 
+    transform: translate(890%,-10%);
+    background-color: red;
+    border-color: red;
+    color : white;
+    font-weight: bold;
+}
+.btn1{
+    position : relative;
+    right : 0px;
+    width : 150px;
+    margin : 5px;
+    color : rgba(0,0,0,0.5);
+    font-weight: bolder;
+    background-color: #C6EA8D;
+    border-color: #C6EA8D;
+}
+.btn1:hover{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : black;
+    font-weight: bold;
+    background-color: #FE90AF;
+    border-color: #FE90AF;
+}
+.btn2{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : rgba(0,0,0,0.5);
+    font-weight: bolder;
+    background-color: #1BFFFF;
+    border-color: #1BFFFF;
+}
+.btn2:hover{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : white;
+    font-weight: bold;
+    background-color: rgba(#2E3192,o.72);
+    border-color: rgba(#2E3192,o.72);
+}
+.btn3{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : rgba(0,0,0,0.5);
+    font-weight: bolder;
+    background-color: #02AABD;
+    border-color: #02AABD;
+}
+.btn3:hover{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : black;
+    font-weight: bold;
+    background-color: #00CDAC;
+    border-color: #00CDAC;
+}
+.btn4{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : rgba(0,0,0,0.6);
+    font-weight: bolder;
+    background-color: #537895;
+    border-color: #537895;
+}
+.btn4:hover{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : whitesmoke;
+    font-weight: bold;
+    background-color: #09203F;
+    border-color: #09203F;
+}
+.btn5{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : rgba(0,0,0,0.6);
+    font-weight: bolder;
+    background-color: #FFC371;
+    border-color: #FFC371;
+}
+.btn5:hover{
+    position : relative;
+    width : 150px;
+    margin : 5px;
+    color : black;
+    font-weight: bold;
+    background-color: #FF5F6D;
+    border-color: #FF5F6D;
+}
+.card1{
+    position : relative;
+    margin : 40px;
+}
+/* nav bar css */
+
+.navbar{
+    position : sticky;
+    display : flex;
+    width : 100%;
+    height : 10%;
+    background-color: aqua;
+}
+.home{
+    font-weight: 200px;
+    font-size: 20px;
+    padding : 15px;
+    text-decoration: none;
+    color :black;
+}
+.canvassetting{
+    font-weight: 200px;
+    font-size: 25px;
+    padding : 15px;
+    text-decoration: none;
+    color :black;
+}
+.search {
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 200px;
+    height : 10%;
+    right : 325px;
+    top : 8px;
+}
+.settings {
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 170px;
+    height : 10%;
+    right : 30px;
+    top : 8px;
+}
+.login{
+    display:flex;
+    position :absolute;
+    padding: 15px;
+    width : 146px;
+    height : 10%;
+    right : 190px;
+    top : 8px;
+}
+.hm{
+    text-decoration: none;
+}
+.trainer{
+    position : relative;
+    margin-right : 10px;
+    font-weight: 200px;
+    font-size: 20px;
+    color : black;
+    text-decoration: none;
+}
+.search-img{
+    position : absolute;
+    height: 40px;
+    width: 40px;
+    padding : 10px;
+    right : 30px;
+    top : 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+.search-img:hover{
+    position : absolute;
+    height: 43px;
+    width: 43px;
+    padding : 10px;
+    right : 28px;
+    top : 9px;
+    border-radius: 30px;
+    background-color: whitesmoke;
+}
+.fa-solid{
+    display : flex;
+    height : 50px;
+    width: 50px;
+    color: black;
+}

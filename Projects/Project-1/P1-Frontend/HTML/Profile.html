@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/Profile.css">
+</head>
+<body>
+
+
+  <div class="navbar">
+    <a class="home" href="../HTML/P1Index.html"><b>HOME</b></a>
+    
+    <div class="search">
+    <p class="trainer"><b>Find trainer</b></p>
+    <a href="../HTML/Search.html" class="hm"><img class="search-img" src="../Images/search.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+    <div class="settings">
+        <p class="trainer"><b>Settings</b></p>
+        <a href="#" class="hm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="search-img" src="../Images/gear.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+    <div class="login">
+        <p class="trainer"><b>Login</b></p>
+        <a href="../HTML/Login.html" class="hm"><img class="search-img" src="../Images/login.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+   </div>
+
+
+   <br>
+   <a href="#" onclick="alertDeleteProfile()"  class="btn btn-primary btn1" id="deletebtn">Delete profile</a>
+<div class="trainer-cards">
+<div class="card card1" style="width: 18rem;">
+    <img src="../Images/person.svg" class="card-img-top trainer-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title trainer"><b>Trainer</b></h5>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <div class="buttons">
+      <br><br>
+    <a href="../HTML/DisplayTrainer.html" class="btn btn-primary btn1">View details</a>
+    <a href="../HTML/UpdateTrainer.html" class="btn btn-primary btn1">Change details</a>
+    <!-- <a href="#" onclick="alertDelete()"  class="btn btn-primary btn1">Delete details</a> -->
+    </div>
+  </div>
+</div>
+
+<div class="card card1" style="width: 18rem;">
+    <img src="../Images/person-rolodex.svg" class="card-img-top contact-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title contact"><b>Contact</b></h5>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <div class="buttons">
+    <a href="../HTML/AddContactForm.html" class="btn btn-primary btn2">Add details</a>
+    <a href="../HTML/DisplayContact.html" class="btn btn-primary btn2">View details</a>
+    <a href="../HTML/UpdateContact.html" class="btn btn-primary btn2">Change details</a>
+    <a href="#" onclick="alertDeleteContact()" class="btn btn-primary btn2">Delete details</a>
+    </div>
+  </div>
+</div>
+<div class="card card1" style="width: 18rem;">
+    <img src="../Images/graduation-cap.png" class="card-img-top education-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title education"><b>Education</b></h5>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <div class="buttons">
+    <a href="#" class="btn btn-primary btn3">Add details</a>
+    <a href="#" class="btn btn-primary btn3">View details</a>
+    <a href="#" class="btn btn-primary btn3">Change details</a>
+    <a href="#" class="btn btn-primary btn3">Delete details</a>
+    </div>
+  </div>
+</div>
+<div class="card card1" style="width: 18rem;">
+  <img src="../Images/code-slash.svg" class="card-img-top skill-img" alt="...">
+  <div class="card-body">
+  <h5 class="card-title skill"><b>Skills</b></h5>
+  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  <div class="buttons">
+  <a href="#" class="btn btn-primary btn4">Add details</a>
+  <a href="#" class="btn btn-primary btn4">View details</a>
+  <a href="#" class="btn btn-primary btn4">Change details</a>
+  <a href="#" class="btn btn-primary btn4">Delete details</a>
+  </div>
+</div>
+</div>
+<div class="card card1" style="width: 18rem;">
+  <img src="../Images/graph-up-arrow.svg" class="card-img-top experience-img" alt="...">
+  <div class="card-body">
+  <h5 class="card-title experience"><b>Experience</b></h5>
+  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  <div class="buttons">
+  <a href="#" class="btn btn-primary btn5">Add details</a>
+  <a href="#" class="btn btn-primary btn5">View details</a>
+  <a href="#" class="btn btn-primary btn5">Change details</a>
+  <a href="#" class="btn btn-primary btn5">Delete details</a>
+  </div>
+</div>
+</div>
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <p class="canvassetting offcanvas-title"  id="offcanvasWithBothOptionsLabel"><strong>Settings</strong></p>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- <p>Try scrolling the rest of the page to see this option in action.</p> -->
+    <div class="dropdown mt-md-2">
+     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+       Dropdown button
+     </button>
+     <ul class="dropdown-menu">
+       <li><a class="dropdown-item" href="#">General</a></li>
+       <li><a class="dropdown-item" href="#">About Us</a></li>
+       <li><a class="dropdown-item" href="#">Something else here</a></li>
+     </ul>
+   </div>
+  </div>
+  
+</div>
+
+
+
+</div>
+<script>
+   let password = localStorage.getItem("password");
+   let mailID = localStorage.getItem("Email");
+
+   function alertDeleteProfile() {
+    if(window.confirm("Are you sure to delete your profile ? ") == true) {
+      let pwd = prompt("Enter your password to confirm\n");
+      if(pwd == password)
+        DeleteProfile();
+      else
+        alert("Sorry can not delete your profile :] \nIncorrect password");
+    }
+   }
+
+   function DeleteProfile() {
+
+    fetch("https://localhost:44387/api/Login/Delete?"+ new URLSearchParams({Email : mailID}), {
+      method : "DELETE",
+      headers : {
+        "Content-type" : "application/json"
+      }
+    }).then(response => {
+      if(response.status == 200) {
+        window.location.href = "P1Index.html"
+      }
+      else{
+        alert("Something went wrong..\n check your password");
+      }
+    })
+   }
+
+   function alertDeleteContact() {
+    if(window.confirm("Are you sure to delete your contact details ? ") == true) {
+        DeleteContact();
+    }
+   }
+
+   function DeleteContact() {
+
+      fetch("https://localhost:44387/api/TrainerContact/Delete?" + new URLSearchParams({Email : mailID}), {
+        method : "DELETE",
+      headers : {
+        "Content-type" : "application/json"
+      }
+    }).then(response => {
+      if(response.status == 200) {
+        alert("Trainer contact details sere deleted successfully...");
+      }
+      else{
+        alert("Something went wrong..\n check your password");
+      }
+    })
+   }
+</script>
+</body>
+
+
+</html>

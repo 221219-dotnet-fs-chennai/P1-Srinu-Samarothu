@@ -10,7 +10,7 @@ namespace Business_Logic
 
         public TraineeLogin AddLogin(TraineeLogin details);
 
-        public IEnumerable<TraineeLogin> GetLoginDetails();
+        public TraineeLogin GetLoginDetails(string email, string password);
 
         public void UpdateLogin(string? mail, string? pwd, TraineeLogin login);
 
@@ -19,7 +19,7 @@ namespace Business_Logic
 
         //------------- Trainer Logic -----------------
 
-        public TraineeTrainerDetail AddTrainer(string? Email, TraineeTrainerDetail tDetails);
+        public TraineeTrainerDetail AddTrainer(TraineeTrainerDetail tDetails);
 
         public IEnumerable<TraineeTrainerDetail> GetTrainerDetails();
 

@@ -1,4 +1,5 @@
 ﻿using Business_Logic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
@@ -15,10 +16,10 @@ namespace Service.Controllers
         {
             logic = _logic;
         }
+        [EnableCors("corspolicy")]
+        [HttpGet("BySkill")]
 
-        [HttpGet("BySkill/{Skill}")]
-
-        public ActionResult GetTrainersBySkill([FromRoute] string Skill)
+        public ActionResult GetTrainersBySkill([FromQuery] string Skill)
         {
             try
             {
@@ -26,7 +27,7 @@ namespace Service.Controllers
                 if (x != null)
                     return Ok(x);
                 else
-                    return NoContent();
+                    return BadRequest("No Trainers found");
             }
             catch(Exception ex)
             {
@@ -34,9 +35,10 @@ namespace Service.Controllers
             }
         }
 
-        [HttpGet("ByGender/{Gender}")]
+        [EnableCors("corspolicy")]
+        [HttpGet("ByGender")]
 
-        public ActionResult GetTrainersByGender([FromRoute] string Gender)
+        public ActionResult GetTrainersByGender([FromQuery] string Gender)
         {
             try
             {
@@ -44,7 +46,7 @@ namespace Service.Controllers
                 if (x != null)
                     return Ok(x);
                 else
-                    return NoContent();
+                    return BadRequest("No Trainers found");
             }
             catch (Exception ex)
             {
@@ -52,10 +54,10 @@ namespace Service.Controllers
             }
         }
 
+        [EnableCors("corspolicy")]
+        [HttpGet("BySkillAndGender")]
 
-        [HttpGet("BySkill/{Skill}/{Gender}")]
-
-        public ActionResult GetTrainersBySkillAndGender([FromRoute] string Skill, [FromRoute] string Gender)
+        public ActionResult GetTrainersBySkillAndGender([FromQuery] string Skill, [FromQuery] string Gender)
         {
             try
             {
@@ -63,7 +65,7 @@ namespace Service.Controllers
                 if (x != null)
                     return Ok(x);
                 else
-                    return NoContent();
+                    return BadRequest("No Trainers found");
             }  
             catch (Exception ex)
             {
@@ -72,10 +74,10 @@ namespace Service.Controllers
         }
 
 
+        [EnableCors("corspolicy")]
+        [HttpGet("ByCity")]
 
-        [HttpGet("ByCity/{City}")]
-
-        public ActionResult GetTrainersByCity([FromRoute] string City)
+        public ActionResult GetTrainersByCity([FromQuery] string City)
         {
             try
             {
@@ -83,7 +85,7 @@ namespace Service.Controllers
                 if (x != null)
                     return Ok(x);
                 else
-                    return NoContent();
+                    return BadRequest("No Trainers found");
             }
             catch (Exception ex)
             {

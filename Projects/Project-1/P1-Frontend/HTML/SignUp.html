@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../CSS/SignUp.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <a class="home" href="../HTML/P1Index.html"><b>HOME</b></a>
+
+    <div class="search">
+      <p class="trainer"><b>Find trainer</b></p>
+      <a href="../HTML/Search.html" class="hm"><img class="search-img" src="../Images/search.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+    <div class="settings">
+      <p class="trainer"><b>Settings</b></p>
+      <a href="#" class="hm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"><img class="search-img" src="../Images/gear.svg" alt="..." width="20px"
+          height="20px"></a>
+    </div>
+    <div class="login">
+      <p class="trainer"><b>Login</b></p>
+      <a href="../HTML/Login.html" class="hm"><img class="search-img" src="../Images/login.svg" alt="..." width="20px" height="20px"></a>
+    </div>
+  </div>
+
+
+  <div class="box">
+    <h1> <b>SIGN UP</b> </h1>
+    <form method="POST" class="form">
+      <div class="mb-3 fname-lname">
+        <div class="fname">
+          <label for="exampleFormControlInput1" class="form-label"><b>First name</b></label>
+          <div class="col-sm-20">
+
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="fname" required="required">
+          </div>
+        </div>
+        <div class="lname">
+          <label for="exampleFormControlInput1" class="form-label"><b>Last name</b></label>
+          <div class="col-sm-20">
+            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="" name="lname" required="required">
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 gender-dob">
+        <div class="gender">
+          <label for="exampleFormControlInput1" class="form-label"><b>Gender</b></label>
+          <div class="col-sm-20">
+
+            <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+            <select class="form-select" aria-label="Default select example" name="gender" required="required">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others" selected="selected">Others</option>
+            </select>
+          </div>
+        </div>
+        <div class="dob">
+          <label for="exampleFormControlInput1" class="form-label"><b>Date of birth</b></label>
+          <div class="col-sm-30">
+            <input type="date" class="form-control" id="exampleFormControlInput3" placeholder="" name="dob" required="required">
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"><b>Email address</b></label>
+        <div class="col-sm-12">
+
+          <input type="email" class="form-control" id="exampleFormControlInput4" placeholder="" name="email" required="required">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"><b>Password</b></label>
+        <div class="col-sm-12">
+
+          <input type="password" class="form-control" id="exampleFormControlInput5" placeholder="" name="password" required="required">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="inputPassword" class="col-form-label"><b> Confirm Password</b></label>
+        <div class="col-sm-12">
+          <input type="password" class="form-control" id="inputPassword" placeholder="" required="required" name="confirmPassword">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3"><b>SIGN UP</b></button>
+      </div>
+    </form>
+  </div>
+  <script src="../JS/SignUp.js"></script>
+</body>
+</html>

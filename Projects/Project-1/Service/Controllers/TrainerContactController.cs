@@ -17,8 +17,8 @@ namespace Service.Controllers
         }
 
 
-        [HttpGet("Get/{Email}")]
-        public ActionResult GetTrainer([FromRoute] string? Email)
+        [HttpGet("Get")]
+        public ActionResult GetTrainer([FromQuery] string? Email)
         {
             try
             {
@@ -41,8 +41,8 @@ namespace Service.Controllers
 
 
 
-        [HttpPost("Add/{Email}")]
-        public ActionResult Add([FromRoute] string? Email, [FromBody] TraineeContactDetail contact)
+        [HttpPost("Add")]
+        public ActionResult Add([FromQuery] string? Email, [FromBody] TraineeContactDetail contact)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace Service.Controllers
         }
 
 
-        [HttpDelete("Delete/{Email}")]
+        [HttpDelete("Delete")]
         public ActionResult Delete(string? Email)
         {
             try
@@ -89,8 +89,8 @@ namespace Service.Controllers
         }
 
 
-        [HttpPut("Modify/{Email}")]
-        public ActionResult Update([FromRoute] string? Email, [FromBody] TraineeContactDetail contact)
+        [HttpPut("Modify")]
+        public ActionResult Update([FromQuery] string? Email, [FromBody] TraineeContactDetail contact)
         {
             try
             {

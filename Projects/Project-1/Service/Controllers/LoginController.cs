@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using Business_Logic;
 using Models;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Cors;
 
 namespace Service.Controllers
 {
@@ -17,7 +18,7 @@ namespace Service.Controllers
             logic = _logic;
         }
 
-        [HttpGet("GetAll")]
+        /*[HttpGet("GetAll")]
         public ActionResult GetLogins()
         {
             try
@@ -37,7 +38,31 @@ namespace Service.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }*/
+        [EnableCors("corspolicy")]
+        [HttpGet("GetUser")]
+        public ActionResult ValidateUser([FromQuery] string Email, [FromQuery] string Password)
+        {
+            try
+            {
+                var logins = logic.GetLoginDetails(Email, Password);
+                if (logins != null)
+                    return Ok(logins);
+                else
+                    return BadRequest("No Trainer logins found");
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
+
 
 
 
@@ -60,7 +85,33 @@ namespace Service.Controllers
         }
 
 
-        [HttpDelete("Delete/{Email}")]
+        
+
+        [HttpPut("Modify/{Email}/{Password}")]
+        public ActionResult Update([FromRoute] string? Email, [FromRoute] string? Password, [FromBody] TraineeLogin login)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
+                {
+                    logic.UpdateLogin(Email, Password, login);
+                    return Ok(login);
+                }
+                else
+                    return BadRequest($"something wrong with {login.Email} input, please try again!");
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpDelete("Delete")]
         public ActionResult Delete(string? Email)
         {
             try
@@ -88,28 +139,10 @@ namespace Service.Controllers
 
         }
 
-        [HttpPut("Modify/{Email}/{Password}")]
-        public ActionResult Update([FromRoute] string? Email, [FromRoute] string? Password, [FromBody] TraineeLogin login)
-        {
-            try
-            {
-                if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
-                {
-                    logic.UpdateLogin(Email, Password, login);
-                    return Ok(login);
-                }
-                else
-                    return BadRequest($"something wrong with {login.Email} input, please try again!");
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+
+
+
+
 
     }
 }
