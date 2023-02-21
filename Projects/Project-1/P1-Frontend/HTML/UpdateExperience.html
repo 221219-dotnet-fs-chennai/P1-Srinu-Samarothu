@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update experience details</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/UpdateExperience.css">
+</head>
+<body>
+  <div id="tdiv">
+    <h2> <b>Trainer experience details</b> </h2>
+    <br>
+    <h5 style="color: rgba(0,0,0,0.5);">&emsp;<b>Experience </b></h5>
+    <br>
+    <form class="tForm">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-4 col-form-label"><button class="button" onclick="Updatecompany()" id="companybtn"><img src="../Images/pencil-square.svg" alt=""></button>&emsp;&emsp;Company</label>
+        <div class="col-sm-5 ipicon">
+          <input type="text" readonly class="form-control-plaintext forminput" placeholder="Company name" id="company">
+        </div>
+        
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-4 col-form-label"><button class="button" onclick="Updaterole()" id="rolebtn"><img src="../Images/pencil-square.svg" alt=""></button>&emsp;&emsp;Role</label>
+        <div class="col-sm-5">
+          <input type="text" readonly class="form-control-plaintext forminput" placeholder="Role" id="role">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-4 col-form-label"><button class="button" onclick="Updateexp()" id="expbtn"><img src="../Images/pencil-square.svg" alt=""></button>&emsp;&emsp;Experience</label>
+        <div class="col-sm-5">
+          <input type="number" readonly class="form-control-plaintext forminput" placeholder="0" id="exp">
+        </div>
+      </div>
+      <br>
+      <button id="changes" onclick="UpdateExperience()" type="submit" class="btn btn-info "><b>Apply changes</b></button><br><br>
+      <br>
+    <!-- </form> -->
+  </div>
+ <script src="../JS/UpdateExperience.js"></script>
+</body>
+</html>

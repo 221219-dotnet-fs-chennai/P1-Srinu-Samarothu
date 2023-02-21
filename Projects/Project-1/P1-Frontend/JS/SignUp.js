@@ -220,3 +220,87 @@ function AddEducation() {
       })
       .catch(error => console.log(error));
 }
+
+//---------------------------------------------------------------------
+
+
+
+function AddExperience() {
+
+  const experienceForm = document.querySelector('.experienceForm');
+
+  experienceForm.addEventListener('submit', event => {
+    if (event)
+      event.preventDefault();
+  });
+  const formData = new FormData(experienceForm);
+    const data = Object.fromEntries(formData);
+
+    
+    const experience1Data = {
+      company : formData.get('company1'),
+      designation : formData.get('role1'),
+      overallExperience : +formData.get('exp1'),
+      tid : 0
+    }
+
+    fetch('https://localhost:44387/api/Experience/Add?' + new URLSearchParams({Email : mailID}), {
+        method : 'POST',
+        body : JSON.stringify(experience1Data),
+        headers : {
+            'Content-type' : 'application/json'
+          },
+    }).then(res => {
+        if(res.status == 200 || res.status == 201) {
+          localStorage.setItem("flag", true);
+          if(window.confirm("Experience added successfully :)\n Do you want to add another ?") == true) 
+            window.location.reload();
+          else
+            window.location.href="Profile.html";
+        }
+        else if(res.status == 400 || res.status == 401) {
+          alert("Something went wrong!!");
+        }
+      })
+      .catch(error => console.log(error));
+}
+
+//-------------------------------------------------------------------------
+
+function AddSkill() {
+
+  const skillForm = document.querySelector('.skillForm');
+
+  skillForm.addEventListener('submit', event => {
+    if (event)
+      event.preventDefault();
+  });
+  const formData = new FormData(skillForm);
+    const data = Object.fromEntries(formData);
+
+    
+    const skillData = {
+      skill1 : formData.get('skill'),
+      proficiency : +formData.get('pro'),
+      tid : 0
+    }
+
+    fetch('https://localhost:44387/api/Skills/Add?' + new URLSearchParams({Email : mailID}), {
+        method : 'POST',
+        body : JSON.stringify(skillData),
+        headers : {
+            'Content-type' : 'application/json'
+          },
+    }).then(res => {
+        if(res.status == 200 || res.status == 201) {
+          if(window.confirm("Skill added successfully :)\n Do you want to add another ?") == true) 
+            window.location.reload();
+          else
+            window.location.href="Profile.html";
+        }
+        else if(res.status == 400 || res.status == 401) {
+          alert("Something went wrong!!");
+        }
+      })
+      .catch(error => console.log(error));
+}

@@ -53,39 +53,40 @@
 
 
     <div class="contact">
+      <br><br><br><br>
         <h1 style="text-align: center;"> <b>EXPERIENCE</b> </h1>
         <br>
         <h5 style=" color: rgba(0,0,0,0.5);"><b>Experience-1<sup style="color:red; font-weight: bolder;">*</sup> </b></h5>
         <br>
-    <form class="row g-3">
+    <form class="row g-3 experienceForm">
         <div class="col-md-5">
             <label for="inputAddress" class="form-label"><b>Company name</b></label>
-            <input type="text" class="form-control" id="inputc" placeholder="">
+            <input type="text" class="form-control" id="company1" name="company1" placeholder="" required="required">
           </div>
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label"><b>Role</b></label>
-          <input type="email" class="form-control" id="inputr">
+          <input type="text" class="form-control" id="role1" name="role1" required="required">
         </div>
         <div class="col-md-3">
-            <label for="inputState" class="form-label"><b>Experience</b></label>
-            <input type="number" class="form-control" id="inpute">
+            <label for="inputState" class="form-label"><b>Experience (in months)</b></label>
+            <input type="number" class="form-control" id="exp1" name="exp1" required="required">
             <br>
           </div>
 
-          <h5 style=" color: rgba(0,0,0,0.5);"><b>Experience-2 (optional)</b></h5>
+          <!-- <h5 style=" color: rgba(0,0,0,0.5);"><b>Experience-2 (optional)</b></h5>
           <br>
 
           <div class="col-md-5">
             <label for="inputAddress" class="form-label"><b>Company name</b></label>
-            <input type="text" class="form-control" id="inputc1" placeholder="">
+            <input type="text" class="form-control" id="company2" name="company2" placeholder="">
           </div>
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label"><b>Role</b></label>
-          <input type="email" class="form-control" id="inputr1">
+          <input type="text" class="form-control" id="role2" name="role2">
         </div>
         <div class="col-md-3">
-            <label for="inputState" class="form-label"><b>Experience</b></label>
-            <input type="number" class="form-control" id="inpute1">
+            <label for="inputState" class="form-label"><b>Experience (in months)</b></label>
+            <input type="number" class="form-control" id="exp2" name="exp2">
             <br>
           </div>
 
@@ -94,23 +95,26 @@
 
           <div class="col-md-5">
             <label for="inputAddress" class="form-label"><b>Company name</b></label>
-            <input type="text" class="form-control" id="inputc2" placeholder="">
+            <input type="text" class="form-control" id="company3" name="company3" placeholder="">
           </div>
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label"><b>Role</b></label>
-          <input type="email" class="form-control" id="inputr2">
+          <input type="text" class="form-control" id="role3" name="role3">
         </div>
         <div class="col-md-3">
-            <label for="inputState" class="form-label"><b>Experience</b></label>
-            <input type="number" class="form-control" id="inpute2">
-            <!-- <br> -->
-          </div>
+            <label for="inputState" class="form-label"><b>Experience (in months)</b></label>
+            <input type="number" class="form-control" id="exp3" name="exp3">
+            
+           </div> -->
         
         <div class="col-12">
             <br>
-          <button type="submit" class="btn btn-primary button" width="100px">Submit</button>
+          <button type="submit" onclick="AddExperience()" class="btn btn-primary button" width="100px">Submit</button>
+          <br><br><br>
         </div>
+        
       </form>
     </div>
+    <script src="../JS/SignUp.js"></script>
 </body>
 </html>

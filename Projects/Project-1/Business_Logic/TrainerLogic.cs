@@ -384,6 +384,19 @@ namespace Business_Logic
             }
         }
 
+        public Experience GetTrainerCompany(string? email, string? company) {
+            int id = action.GetTrainerId(email);
+            try
+            {
+                DF.Experience trainerExperience = experienceRepo.GetDetails().Where(c => c.Tid == id && c.Company == company).First();
+                return Mapper.MapGetModelExperience(trainerExperience);
+            }
+            catch(Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
+        }
+
         public void UpdateTrainerExperience(string? mail, string? company, Experience experience)
         {
             try
@@ -468,6 +481,20 @@ namespace Business_Logic
                 int id = action.GetTrainerId(Email);
                 List<DF.Skill> trainerSkill = skillRepo.GetDetails().Where(c => c.Tid == id).ToList();
                 return Mapper.MapAllModelSkills(trainerSkill);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Email does not exist");
+            }
+        }
+
+        public Skill GetTrainerSkill(string? Email, string? skill)
+        {
+            try
+            {
+                int id = action.GetTrainerId(Email);
+                DF.Skill trainerSkill = skillRepo.GetDetails().Where(c => c.Tid == id && c.Skill1 == skill).First();
+                return Mapper.MapGetModelSkill(trainerSkill);
             }
             catch (Exception)
             {

@@ -16,8 +16,8 @@ namespace Service.Controllers
             logic = _logic;
         }
 
-        [HttpGet("GetAll/{Email}")]
-        public ActionResult GetAll([FromRoute] string? Email)
+        [HttpGet("GetAll")]
+        public ActionResult GetAll([FromQuery] string? Email)
         {
             try
             {
@@ -38,8 +38,30 @@ namespace Service.Controllers
             }
         }
 
-        [HttpPost("Add/{Email}")]
-        public ActionResult Add([FromRoute] string? Email, [FromBody] Experience experience)
+        [HttpGet("GetCompany")]
+        public ActionResult GetCompany([FromQuery] string? Email, [FromQuery] string? company)
+        {
+            try
+            {
+                var experiences = logic.GetTrainerCompany(Email, company);
+                if (experiences != null)
+                    return Ok(experiences);
+                else
+                    return BadRequest("No Trainer logins found");
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("Add")]
+        public ActionResult Add([FromQuery] string? Email, [FromBody] Experience experience)
         {
             try
             {
@@ -58,8 +80,8 @@ namespace Service.Controllers
 
 
 
-        [HttpDelete("Delete/{Email}")]
-        public ActionResult Delete([FromRoute] string? Email)
+        [HttpDelete("DeleteAll")]
+        public ActionResult Delete([FromQuery] string? Email)
         {
             try
             {
@@ -87,8 +109,8 @@ namespace Service.Controllers
         }
 
 
-        [HttpDelete("Delete/{Email}/{Company}")]
-        public ActionResult Delete([FromRoute] string? Email, [FromRoute] string? Company)
+        [HttpDelete("Delete")]
+        public ActionResult Delete([FromQuery] string? Email, [FromQuery] string? Company)
         {
             try
             {
@@ -116,8 +138,8 @@ namespace Service.Controllers
         }
 
 
-        [HttpPut("Modify/{Email}/{Company}")]
-        public ActionResult Update([FromRoute] string? Email, [FromRoute] string? Company, [FromBody] Experience experience)
+        [HttpPut("Modify")]
+        public ActionResult Update([FromQuery] string? Email, [FromQuery] string? Company, [FromBody] Experience experience)
         {
             try
             {

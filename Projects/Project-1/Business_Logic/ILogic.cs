@@ -56,6 +56,8 @@ namespace Business_Logic
 
         public IEnumerable<Experience> GetTrainerExperience(string? Email);
 
+        public Experience GetTrainerCompany(string? email, string? company);
+
         public void UpdateTrainerExperience(string? mail, string? company, Experience experience);
 
         public Experience DeleteTrainerExperience(string? mail, string? company);
@@ -67,6 +69,8 @@ namespace Business_Logic
         public Skill AddTrainerSkill(string? mail, Skill skillDetails);
 
         public IEnumerable<Skill> GetTrainerSkill(string? Email);
+
+        public Skill GetTrainerSkill(string? Email, string? skill);
 
         public void UpdateTrainerSkill(string? mail, string? skill, Skill trainer);
 

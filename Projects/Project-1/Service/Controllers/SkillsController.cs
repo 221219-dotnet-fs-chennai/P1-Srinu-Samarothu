@@ -16,8 +16,8 @@ namespace Service.Controllers
             logic = _logic;
         }
 
-        [HttpGet("GetAll/{Email}")]
-        public ActionResult GetAll([FromRoute] string? Email)
+        [HttpGet("GetAll")]
+        public ActionResult GetAll([FromQuery] string? Email)
         {
             try
             {
@@ -38,9 +38,31 @@ namespace Service.Controllers
             }
         }
 
+        [HttpGet("GetSkill")]
+        public ActionResult GetSkill([FromQuery] string? Email, [FromQuery] string? skill)
+        {
+            try
+            {
+                var skills = logic.GetTrainerSkill(Email, skill);
+                if (skills != null)
+                    return Ok(skills);
+                else
+                    return BadRequest("No Trainer logins found");
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
-        [HttpPost("Add/{Email}")]
-        public ActionResult Add([FromRoute] string? Email, [FromBody] Skill skill)
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpPost("Add")]
+        public ActionResult Add([FromQuery] string? Email, [FromBody] Skill skill)
         {
             try
             {
@@ -57,8 +79,8 @@ namespace Service.Controllers
             }
         }
 
-        [HttpDelete("Delete/{Email}")]
-        public ActionResult Delete([FromRoute] string? Email)
+        [HttpDelete("DeleteAll")]
+        public ActionResult Delete([FromQuery] string? Email)
         {
             try
             {
@@ -85,8 +107,8 @@ namespace Service.Controllers
 
         }
 
-        [HttpDelete("Delete/{Email}/{skill}")]
-        public ActionResult Delete([FromRoute] string? Email, [FromRoute] string? _skill)
+        [HttpDelete("Delete")]
+        public ActionResult Delete([FromQuery] string? Email, [FromQuery] string? _skill)
         {
             try
             {

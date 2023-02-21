@@ -154,22 +154,13 @@ let mailID = localStorage.getItem("Email");
                       "Content-type": "application/json"
                   }
               }).then(response => {
-                  if(response.status === 200 || response.status===204) {
-                      alert("hii");
+                  if(response.status == 200 || response.status == 204) {
+                    alert("Updated successfully");
                     window.location.href = "Profile.html"
                   }
                   else{
                     alert("Something went wrong..\n check your password");
                   }
                 })
-              // .then(response => {
-              //     if (response.status == 200 && response.status == 204) {
-              //         if (alert("Updated successfully :) \n Want to go back ?"))
-              //             window.location.href = "Profile.html"
-              //     }
-              //     else if (res.status == 400 || res.status == 401) {
-              //         alert("Something went wrong...\n**Redirecting to PROFILE**");
-              //     }
-              // })
               .catch(error => console.log(error))
       }
