@@ -114,7 +114,7 @@ namespace Service.Controllers
             {
                 if (!string.IsNullOrEmpty(Email))
                 {
-                    var skill = logic.DeleteTrainerExperience(Email, _skill);
+                    var skill = logic.DeleteTrainerSkill(Email, _skill);
                     if (skill != null)
                         return Ok(skill);
                     else
@@ -135,8 +135,8 @@ namespace Service.Controllers
 
         }
 
-        [HttpPut("Modify/{Email}/{skill}")]
-        public ActionResult Update([FromRoute] string? Email, [FromRoute] string? skill, [FromBody] Skill modelSkill)
+        [HttpPut("Modify")]
+        public ActionResult Update([FromQuery] string? Email, [FromQuery] string? skill, [FromBody] Skill modelSkill)
         {
             try
             {

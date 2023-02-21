@@ -69,7 +69,7 @@
     <a href="../HTML/AddEducationForm.html" class="btn btn-primary btn3">Add details</a>
     <a href="../HTML/DisplayEducation.html" class="btn btn-primary btn3">View details</a>
     <a href="../HTML/UpdateEducation.html" class="btn btn-primary btn3">Change details</a>
-    <a href="#" class="btn btn-primary btn3">Delete details</a>
+    <a href="#" onclick="alertDeleteEducation()" class="btn btn-primary btn3">Delete details</a>
     </div>
   </div>
 </div>
@@ -80,9 +80,9 @@
   <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
   <div class="buttons">
   <a href="../HTML/AddSkillForm.html" class="btn btn-primary btn4">Add details</a>
-  <a href="#" class="btn btn-primary btn4">View details</a>
-  <a href="#" class="btn btn-primary btn4">Change details</a>
-  <a href="#" class="btn btn-primary btn4">Delete details</a>
+  <a href="../HTML/DisplaySkill.html" class="btn btn-primary btn4">View details</a>
+  <a href="../HTML/UpdateSkill.html" class="btn btn-primary btn4">Change details</a>
+  <a href="#" onclick="alertDeleteSkill()" class="btn btn-primary btn4">Delete details</a>
   </div>
 </div>
 </div>
@@ -95,7 +95,7 @@
   <a href="../HTML/AddExperienceForm.html" class="btn btn-primary btn5">Add details</a>
   <a href="../HTML/DisplayExperience.html" class="btn btn-primary btn5">View details</a>
   <a href="../HTML/UpdateExperience.html" class="btn btn-primary btn5">Change details</a>
-  <a href="#" class="btn btn-primary btn5">Delete details</a>
+  <a href="#" onclick="alertDeleteExperience()" class="btn btn-primary btn5">Delete details</a>
   </div>
 </div>
 </div>
@@ -171,12 +171,111 @@
       }
     }).then(response => {
       if(response.status == 200) {
-        alert("Trainer contact details sere deleted successfully...");
+        alert("Trainer contact details were deleted successfully...");
       }
       else{
         alert("Something went wrong..\n check your password");
       }
     })
+   }
+
+
+   function alertDeleteEducation() {
+    if(window.confirm("Are you sure to delete your education details ? ") == true) {
+        DeleteEducation();
+    }
+   }
+
+   function DeleteEducation() {
+
+      fetch("https://localhost:44387/api/Education/Delete?" + new URLSearchParams({Email : mailID}), {
+        method : "DELETE",
+      headers : {
+        "Content-type" : "application/json"
+      }
+    }).then(response => {
+      if(response.status == 200) {
+        alert("Trainer education details were deleted successfully...");
+      }
+      else{
+        alert("Something went wrong..\n check your password");
+      }
+    })
+   }
+
+
+   function alertDeleteExperience() {
+    if(window.confirm("Are you sure to delete your experience details ? ") == true) {
+        DeleteExperience();
+    }
+   }
+
+   function DeleteExperience(){
+    var com;
+    do {
+    com = prompt("Enter the company you wish to delete\nElse enter \"NO\" to quit deleting");
+    if(com == "NO") {
+      break;
+    }
+    else if(com != null) {
+      fetch("https://localhost:44387/api/Experience/Delete?" + new URLSearchParams({
+        Email : mailID,
+        Company : com
+      }), {
+          method : "DELETE",
+        headers : {
+          "Content-type" : "application/json"
+        }
+      }).then(response => {
+        if(response.status == 200) {
+          alert(`${com} experience details were deleted successfully...`);
+        }
+        else{
+          alert("Something went wrong..\n check your password");
+        }
+      })
+      break;
+    }
+    }while(true)
+   }
+
+
+
+   function alertDeleteSkill() {
+    if(window.confirm("Are you sure to delete your skill details ? ") == true) {
+        DeleteSkill();
+    }
+   }
+
+   function DeleteSkill(){
+    var skill;
+    do {
+    skill = prompt("Enter the skill you wish to delete\nElse enter \"NO\" to quit deleting");
+    if(skill == "NO") {
+      break;
+    }
+    else if(skill != null) {
+      fetch("https://localhost:44387/api/Skills/Delete?"  + 
+      new URLSearchParams({
+        Email : mailID,
+        _skill : skill
+      }), 
+      {
+        method : "DELETE",
+        headers : {
+          "Content-type" : "application/json"
+        }
+      }).then(response => {
+        if(response.status == 200) {
+          alert(`${skill}  details were deleted successfully...`);
+        }
+        else{
+          alert("Something went wrong..");
+        }
+      })
+      break;
+    }
+    }while(true)
    }
 </script>
 </body>
