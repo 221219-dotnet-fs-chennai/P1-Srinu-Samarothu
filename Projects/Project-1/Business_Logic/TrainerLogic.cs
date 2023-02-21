@@ -557,7 +557,7 @@ namespace Business_Logic
                         FirstName = vtable.FirstName,
                         LastName = vtable.LastName,
                         Gender = vtable.Gender,
-                        City = vtable.City,
+                        City = vtable.City ?? "NA",
                         skill = (from s in skillRepo.GetDetails()
                                  where vtable.Tid == s.Tid && s.Skill1 == skill
                                  select s.Skill1).First(),
@@ -621,7 +621,7 @@ namespace Business_Logic
                     FirstName = vtable.FirstName,
                     LastName = vtable.LastName,
                     Gender = vtable.Gender,
-                    allSkills = action.GetSkillDictionary(vtable.Tid) ?? null,
+                    //allSkills = action.GetSkillDictionary(vtable.Tid) ?? null,
                     City = vtable.City,
                     State = vtable.State,
                     Zipcode = vtable.Zipcode,
@@ -643,7 +643,7 @@ namespace Business_Logic
                     FirstName = vtable.FirstName,
                     LastName = vtable.LastName,
                     Gender = vtable.Gender,
-                    allSkills = action.GetSkillDictionary(vtable.Tid) ?? null,
+                    //allSkills = action.GetSkillDictionary(vtable.Tid) ?? null,
                     City = vtable.City,
                     State = vtable.State,
                     Zipcode = vtable.Zipcode,

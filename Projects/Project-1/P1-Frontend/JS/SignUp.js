@@ -164,11 +164,55 @@ function AddContact() {
         headers : {
             'Content-type' : 'application/json'
           },
-    }).then(res => res.json())
-    .then((res) => {
+    })
+    .then(res => {
         if(res.status == 200 || res.status == 201) {
-          //window.location.href="Profile.html"
           alert("Trainer contact details were added successfully :)");
+          window.location.href="Profile.html";
+        }
+        else if(res.status == 400 || res.status == 401) {
+          alert("Something went wrong!!");
+        }
+      })
+      .catch(error => console.log(error));
+}
+
+
+//-----------------------------------------------------------------
+
+function AddEducation() {
+
+  const educationform = document.querySelector('.educationForm');
+
+  educationform.addEventListener('submit', event => {
+    if (event)
+      event.preventDefault();
+  });
+  const formData = new FormData(educationform);
+    const data = Object.fromEntries(formData);
+
+    console.log(data);
+    const educationData = {
+      ugCollege : formData.get('UGclg') ?? "NA",
+      ugPercentage : +formData.get('UGper') ?? 0,
+      ugPassoutYear : +formData.get('UGpy') ?? 0,
+      pgCollege : formData.get('PGclg') ?? "NA",
+      pgPercentage : +formData.get('PGper') ?? 0,
+      pgPassoutYear : +formData.get('PGpy') ?? 0,
+      tid : 0
+    }
+
+    fetch('https://localhost:44387/api/Education/Add?' + new URLSearchParams({Email : mailID}), {
+        method : 'POST',
+        body : JSON.stringify(educationData),
+        headers : {
+            'Content-type' : 'application/json'
+          },
+    })
+    .then(res => {
+        if(res.status == 200 || res.status == 201) {
+          alert("Trainer education details were added successfully :)");
+          window.location.href="Profile.html";
         }
         else if(res.status == 400 || res.status == 401) {
           alert("Something went wrong!!");

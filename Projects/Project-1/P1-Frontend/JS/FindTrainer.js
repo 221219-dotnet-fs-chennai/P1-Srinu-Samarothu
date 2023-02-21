@@ -6,11 +6,6 @@
 
 
 async function SearchBySkill() {
-
-
-    document.querySelector("#skillbtn").addEventListener("click", () => {
-        window.scrollTo(0, 1500);
-    })
     
     const skillval = document.getElementById("skill").value;
     console.log(skillval);
@@ -28,75 +23,57 @@ async function SearchBySkill() {
            headers : {
                'Content-type' : 'application/json'
            }
-        })//.then((res) => {
-    //     if(res.status == 200) {
-    //         window.location.href="Profile.html"
-    //       }
-    //       else if(res.status == 400 || res.status == 401) {
-    //         alert("Invalid credentials :\nLogin with proper credentials\nGo to Sign up");
-    //       }
-    //    })
-        //  .then(data => {
-        //     data.forEach(element => {
-        //         console.log(element.firstName)
-        //     })
-        //  })
-         .then(res => {
+        }).then(res => res.json())
+         .then(data => {
             
-             
-             const div = document.getElementById("divid");
-
             const h2 = document.getElementById("h2id");
-            h2.textContent = "Skill results";
+            h2.innerHTML = `<b>Search results : <u><span style="color:red">by Skill '${skillval}' </span></u></b>`;
+            const h4 = document.getElementById("h4id");
+            h4.innerHTML = `<b>Total search count : <span style="color:red">${data.length}</span></b>`;
 
-            let table = document.createElement("table");
+            let theader = document.createElement('div');
+            theader.innerHTML = `<table class="table" id="tableId">
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">City</th>
+              <th scope="col">Skill</th>
+              <th scope="col">Proficiency</th>
+            </tr>
+            </table>`
+
+            const div = document.getElementById("divid");
+            div.appendChild(theader);
             
-               let tr = document.createElement("tr");
-               let th1 = document.createElement("th");
-               th1.textContent = "First name";
-               let th2 = document.createElement("th");
-               th2.textContent = "Last name";
-               let th3 = document.createElement("th");
-               th3.textContent = "Gender";
-               let th4 = document.createElement("th");
-               th4.textContent = "City";
-               let th5 = document.createElement("th");
-               th5.textContent = "Skill";
-               let th6 = document.createElement("th");
-               th6.textContent = "Proficiency";
 
-               res.forEach(element => {
+            let i=1;
+            data.forEach(element => {
+                
+                let table = document.getElementById('tableId');
+
+                var row = table.insertRow(i);
+                var cell0 = row.insertCell(0);
+                var cell1 = row.insertCell(1);
+                var cell2 = row.insertCell(2);
+                var cell3 = row.insertCell(3);
+                var cell4 = row.insertCell(4);
+                var cell5 = row.insertCell(5);
+                var cell6 = row.insertCell(6);
+                
+                cell0.innerHTML = `${i}`;
+                cell1.innerHTML = `<b>${element.firstName}</b>`;
+                cell2.innerHTML = `<b>${element.lastName}</b>`;
+                cell3.innerHTML = `${element.gender}`;
+                cell4.innerHTML = `${element.city}`;
+                cell5.innerHTML = `${element.skill}`;
+                cell6.innerHTML = `${element.proficiency}`;
+
+                i++;
                
-               let tr1 = document.createElement("tr");
-               let th11 = document.createElement("td");
-               th11.textContent = element.firstName;
-               let th21 = document.createElement("td");
-               th21.textContent = element.lastName;
-               let th31 = document.createElement("td");
-               th31.textContent = element.gender;
-               let th41 = document.createElement("td");
-               th41.textContent = element.city;
-               let th51 = document.createElement("td");
-               th51.textContent = element.skill;
-               let th61 = document.createElement("td");
-               th61.textContent = element.proficiency;
-               
-               tr1.appendChild(th11);
-               tr1.appendChild(th21);
-               tr1.appendChild(th31);
-               tr1.appendChild(th41);
-               tr1.appendChild(th51);
-               tr1.appendChild(th61);
             });
 
-               tr.appendChild(th1);
-               tr.appendChild(th2);
-               tr.appendChild(th3);
-               tr.appendChild(th4);
-               tr.appendChild(th5);
-               tr.appendChild(th6);
-               table.appendChild(tr);
-               div.appendChild(table);
          })
          .catch(error => console.log(error))
 }
@@ -121,12 +98,57 @@ function SearchByLocation() {
                'Content-type' : 'application/json'
            },
        }).then(res => res.json())
-         //.then(data => console.log(data))
-         .then((res) => {
-            res.forEach(element => {
-                console.log(element.firstName);
+         .then(data => {
+            
+            const h2 = document.getElementById("h2id");
+            h2.innerHTML = `<b>Search results : <u><span style="color:red">by City '${city}' </span></u></b>`;
+            const h4 = document.getElementById("h4id");
+            h4.innerHTML = `<b>Total search count : <span style="color:red">${data.length}</span></b>`;
+
+            let theader = document.createElement('div');
+            theader.innerHTML = `<table class="table" id="tableId">
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">Zip code</th>
+            </tr>
+            </table>`
+
+            const div = document.getElementById("divid");
+            div.appendChild(theader);
+            
+
+            let i=1;
+            data.forEach(element => {
+                
+                let table = document.getElementById('tableId');
+
+                var row = table.insertRow(i);
+                var cell0 = row.insertCell(0);
+                var cell1 = row.insertCell(1);
+                var cell2 = row.insertCell(2);
+                var cell3 = row.insertCell(3);
+                var cell4 = row.insertCell(4);
+                var cell5 = row.insertCell(5);
+                var cell6 = row.insertCell(6);
+                
+                cell0.innerHTML = `${i}`;
+                cell1.innerHTML = `<b>${element.firstName}</b>`;
+                cell2.innerHTML = `<b>${element.lastName}</b>`;
+                cell3.innerHTML = `${element.gender}`;
+                cell4.innerHTML = `${element.city}`;
+                cell5.innerHTML = `${element.state}`;
+                cell6.innerHTML = `${element.zipcode}`;
+
+                i++;
+               
             });
-          })
+
+         })
          .catch(error => console.log(error));
 }
 
@@ -151,12 +173,57 @@ function SearchByGender() {
                'Content-type' : 'application/json'
            },
        }).then(res => res.json())
-         //.then(data => console.log(data))
-         .then((res) => {
-            res.forEach(element => {
-                console.log(element.firstName);
+         .then(data => {
+            
+            const h2 = document.getElementById("h2id");
+            h2.innerHTML = `<b>Search results : <u><span style="color:red">by Gender '${gender}' </span></u></b>`;
+            const h4 = document.getElementById("h4id");
+            h4.innerHTML = `<b>Total search count : <span style="color:red">${data.length}</span></b>`;
+
+            let theader = document.createElement('div');
+            theader.innerHTML = `<table class="table" id="tableId">
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">Zip code</th>
+            </tr>
+            </table>`
+
+            const div = document.getElementById("divid");
+            div.appendChild(theader);
+            
+
+            let i=1;
+            data.forEach(element => {
+                
+                let table = document.getElementById('tableId');
+
+                var row = table.insertRow(i);
+                var cell0 = row.insertCell(0);
+                var cell1 = row.insertCell(1);
+                var cell2 = row.insertCell(2);
+                var cell3 = row.insertCell(3);
+                var cell4 = row.insertCell(4);
+                var cell5 = row.insertCell(5);
+                var cell6 = row.insertCell(6);
+                
+                cell0.innerHTML = `${i}`;
+                cell1.innerHTML = `<b>${element.firstName}</b>`;
+                cell2.innerHTML = `<b>${element.lastName}</b>`;
+                cell3.innerHTML = `${element.gender}`;
+                cell4.innerHTML = `${element.city}`;
+                cell5.innerHTML = `${element.state}`;
+                cell6.innerHTML = `${element.zipcode}`;
+
+                i++;
+               
             });
-          })
+
+         })
          .catch(error => console.log(error));
 }
 
@@ -183,11 +250,59 @@ function SearchBySkillGender() {
                'Content-type' : 'application/json'
            },
        }).then(res => res.json())
-         //.then(data => console.log(data))
-         .then((res) => {
-            res.forEach(element => {
-                console.log(element.firstName);
+         .then(data => {
+            
+            const h2 = document.getElementById("h2id");
+            h2.innerHTML = `<b>Search results : <u><span style="color:red">by Skill '${skill} & Gender '${gender}' </span></u></b>`;
+            const h4 = document.getElementById("h4id");
+            h4.innerHTML = `<b>Total search count : <span style="color:red">${data.length}</span></b>`;
+
+            let theader = document.createElement('div');
+            theader.innerHTML = `<table class="table" id="tableId">
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">City</th>
+              <th scope="col">Skill</th>
+              <th scope="col">Proficiency</th>
+            </tr>
+            </table>`
+
+            const div = document.getElementById("divid");
+            div.appendChild(theader);
+            
+
+            let i=1;
+            data.forEach(element => {
+                
+                let table = document.getElementById('tableId');
+
+                var row = table.insertRow(i);
+                var cell0 = row.insertCell(0);
+                var cell1 = row.insertCell(1);
+                var cell2 = row.insertCell(2);
+                var cell3 = row.insertCell(3);
+                var cell4 = row.insertCell(4);
+                var cell5 = row.insertCell(5);
+                var cell6 = row.insertCell(6);
+                
+                cell0.innerHTML = `${i}`;
+                cell1.innerHTML = `<b>${element.firstName}</b>`;
+                cell2.innerHTML = `<b>${element.lastName}</b>`;
+                cell3.innerHTML = `${element.gender}`;
+                cell4.innerHTML = `${element.city}`;
+                cell5.innerHTML = `${element.skill}`;
+                cell6.innerHTML = `${element.proficiency}`;
+
+                i++;
+               
             });
-          })
+
+         })
          .catch(error => console.log(error));
 }
+
+
+

@@ -47,7 +47,11 @@
         </div>
 
 
-       
+       <!-- editer -->
+       <!-- <input id="skill" type="text" class="form-control" aria-label="Sizing example input" -->
+                        <!-- aria-describedby="inputGroup-sizing-default"  name="skill"> -->
+                        <!-- <a id="skillbtn" href="#link1" onclick="SearchBySkill()" type="submit" class="btn btn-info"><b>Find</b></a> -->
+
 
 
         <div class="contact" id="scrollDiv">
@@ -55,51 +59,52 @@
             <br>
             <h5 ><b>Find trainers by <span class="sh">skill</span></b></h5>
             <br>
-        <form class="row g-3">
+        <!-- <form class="row g-3"> -->
             <div class="card card-body">
-                <form class="skillForm">
+                <!-- <form id="skillForm" method="GET"> -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Skill</span>
                     <input id="skill" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default"  name="skill">
                 </div>
+                
+                <!-- </form> -->
                 <div class="col-auto">
-                <button id="skillbtn" onclick="SearchBySkill()" type="submit" class="btn btn-info"><b>Find</b></button>
-                </div>  
-                </form>
+                  <a id="skillbtn" href="#link1" onclick="SearchBySkill()" type="submit" class="btn btn-info"><b>Find</b></a>
+                  </div> 
             </div>
             
     
               <h5 ><b>Find trainers by <span class="sh">location</span> </b></h5>
 
               <div class="card card-body">
-                <form class="cityForm">
+                <!-- <form id="cityForm"> -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">City</span>
                     <input id="city" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default" name="city">
                 </div>
-                <button id="citybtn" onclick="SearchByLocation()" type="submit" class="btn btn-info cityFind" ><b>Find</b></button>
-                </form>
+                <a id="citybtn" href="#link1" onclick="SearchByLocation()" type="submit" class="btn btn-info cityFind" ><b>Find</b></a>
+                <!-- </form> -->
             </div>
 
-              <h5 ><b>Find trainers by <span class="sh">Gender</span> </b></h5>
+              <h5 ><b>Find trainers by <span class="sh">gender</span> </b></h5>
 
               <div class="card card-body">
-                <form class="genderForm">
+                <!-- <form id="genderForm"> -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Gender</span>
                     <input id="gender" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default" name="gender">
                 </div>
-                <button id="genderbtn" onclick="SearchByGender()" type="submit" class="btn btn-info genderFind"><b>Find</b></button>
-                </form>
+                <a id="genderbtn" href="#link1" onclick="SearchByGender()" type="submit" class="btn btn-info genderFind"><b>Find</b></a>
+                <!-- </form> -->
             </div>
 
             <h5 ><b>Find trainers <span class="sh">skill & gender</span></b></h5>
               
               <div class="card card-body">
-                <form class="sgForm">
+                <!-- <form id="sgForm"> -->
                   <div class="input-group">
                       <span class="input-group-text" id="inputGroup-sizing-default">Skill</span>
                       <input id="skill1" type="text" class="form-control" aria-label="Sizing example input"
@@ -109,15 +114,23 @@
                       aria-describedby="inputGroup-sizing-default" name="gender1">
                   </div>
                     <br>
-                <button id="sgbtn" onclick="SearchBySkillGender()" type="submit" class="btn btn-info sgFilter"><b>Find</b></button>
+                <a id="sgbtn" href="#link1" onclick="SearchBySkillGender()" type="submit" class="btn btn-info sgFilter"><b>Find</b></a>
                 
-                </form>
+                <!-- </form> -->
                 
-              </div>
-              <!-- <h2 id="h2id">Search results</h2> -->
-              <br><br><br><br><div id="divid"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          </form>
+              </div> 
+              <br><br><br><br>
+              <h2 id="h2id"></h2>
+              <br>
+              <h5 id="h4id"></h5>
+              <br><br><br><div id="divid">
+                
+
+              </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <!-- </form> -->
+          <a id="link1"></a>
         </div>
+        
 
 </body>
 </html>
