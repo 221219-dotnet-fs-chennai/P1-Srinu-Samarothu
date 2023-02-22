@@ -530,6 +530,7 @@ namespace Business_Logic
         }
 
 
+
         public Skill DeleteTrainerSkill(string? mail, string? skill)
         {
             try
