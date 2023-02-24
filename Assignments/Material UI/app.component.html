@@ -1,0 +1,81 @@
+<!-- <h1>Hello NodeJS bro</h1> -->
+<p>
+	<ngb-alert [dismissible]="false">
+		<strong>Warning!</strong> Better check yourself, you're not looking too good.
+	</ngb-alert>
+</p>
+
+<h2> {{title}}</h2>
+
+<hr>
+<h2>Button component</h2>
+<hr>
+
+<div class="example-button-row">
+    <button mat-flat-button>Basic</button>
+    <button mat-flat-button color="primary">Primary</button>
+    <button mat-flat-button color="accent">Accent</button>
+    <button mat-flat-button color="warn">Warn</button>
+    <button mat-flat-button disabled>Disabled</button>
+    <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+<br>
+  <hr>
+  <h2>Check box component</h2>
+  <hr>
+  <section class="example-section">
+      <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+      <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
+    </section>
+    
+    
+    <hr>
+    <h2>Chip component</h2>
+    <hr>
+    
+    <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-option>One fish</mat-chip-option>
+        <mat-chip-option>Two fish</mat-chip-option>
+        <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+        <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox>
+    
+    
+    <hr>
+    <h2>Icon component</h2>
+    <hr>
+    
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    
+    <hr>
+    <h2>Menu component</h2>
+    <hr>
+    
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <br>
+    <br>
+    
+    <hr>
+    <h2>Slide component</h2>
+    <hr>
+    
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+    
+    <hr>
+    <h2>Slide component</h2>
+    <hr>
+    <mat-slider>
+        <input matSliderThumb>
+      </mat-slider>
+
+
+
+
+<!-- <app-server></app-server>
+
+<app-serverManual></app-serverManual> -->
