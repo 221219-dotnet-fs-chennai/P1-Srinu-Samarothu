@@ -123,7 +123,7 @@ namespace Service.Controllers
                 else
                     return BadRequest("Email entered is invalid");
 
-            }
+            }   
             catch (SqlException ex)
             {
                 return BadRequest(ex.Message);
